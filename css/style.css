@@ -7,6 +7,14 @@ body {
     color: white;
 }
 
+header {
+    background-color: black;
+    opacity: .8;
+    color: white;
+    padding-top: 25px;
+    padding-bottom: 25px;
+}
+
 h1, h2, h3 {
     color: orange;
     text-decoration: underline;
@@ -53,11 +61,19 @@ img {
 
 table {
     width: 35rem;
+    border: orange solid;
+    background-color: white;
+    opacity: .8;
+    color: black;
 }
 
 table tr,th {
     font-size: large;
     text-align: left;
+}
+
+table th {
+    background-color: orange;
 }
 
 table td {
