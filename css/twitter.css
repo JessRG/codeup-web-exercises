@@ -104,7 +104,7 @@ a {
     background-color: var(--light-bg);
     border-bottom: 1px solid var(--separator-color);
     padding: .5em;
-    overflow: scroll;
+    overflow: hidden;
 }
 
 .media-image {
