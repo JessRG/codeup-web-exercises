@@ -35,9 +35,6 @@ body {
     display: inline-block;
     padding: 0 1em;
     text-decoration: none;
-}
-
-.nav-item a:link {
     color: black;
 }
 
