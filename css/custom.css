@@ -1,0 +1,10 @@
+.jumbotron {
+    background-image: url("https://java.codeup.com/examples/bootstrap/pizza.png");
+}
+
+h1 {
+    text-decoration-color: #6D5A3F;
+    text-align: center;
+    background-color: white;
+    opacity: .7;
+}
