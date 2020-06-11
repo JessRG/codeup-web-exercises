@@ -44,4 +44,11 @@ function numOfChars(str) {
     return lengthOfString(str);
 }
 
-console.log(numOfChars("This is a string!"));
+// console.log(numOfChars("This is a string!"));
+
+// Write a JavaScript function that will return the diameter of a circle with a radius of the number passed through it.
+function diameterOfCircle(radius) {
+    return 2 * radius;
+}
+
+console.log(diameterOfCircle(returnsSeven()));
