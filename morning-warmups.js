@@ -51,4 +51,11 @@ function diameterOfCircle(radius) {
     return 2 * radius;
 }
 
-console.log(diameterOfCircle(returnsSeven()));
+// console.log(diameterOfCircle(returnsSeven()));
+
+// Write a JavaScript function that returns the square root of the number passed through it.
+function squareRoot(num) {
+    return Math.sqrt(num);
+}
+
+console.log(squareroot(64));
