@@ -58,4 +58,30 @@ function squareRoot(num) {
     return Math.sqrt(num);
 }
 
-console.log(squareroot(64));
+// console.log(squareroot(64));
+
+// Write a JS function that returns the argument passed.
+function returnArg(arg) {
+    return arg;
+}
+
+// console.log(returnArg('This text will be returned.'));
+
+// Write a JS function that returns a string representing the type of the argument passed through it.
+function returnType(param) {
+    return typeof param;
+}
+
+// console.log(returnType(7));
+
+// Write a JavaScript function that returns the boolean true if a number passed through it is even.
+function isEven(num) {
+    if (num % 2 == 0) {
+        return true;
+    } else {
+        return false;
+    }
+}
+
+// console.log(isEven(returnsSeven()));
+// console.log(isEven(44));
