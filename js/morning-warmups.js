@@ -85,3 +85,18 @@ function isEven(num) {
 
 // console.log(isEven(returnsSeven()));
 // console.log(isEven(44));
+
+// Print the first ten even numbers at least 3 times (preferably using different strategies)
+// function isEven() {
+//     return num % 2 === 0;
+// }
+
+function printFirstTenEvenNums() {
+    for (let i = 1; i <= 20; i++) {
+        if(i % 2 === 0) {
+            console.log(i);
+        }
+    }
+}
+
+// printFirstTenEvenNums();
