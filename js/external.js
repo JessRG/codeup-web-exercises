@@ -1,27 +1,26 @@
-// console.log("Hello from external JavaScript");
-//
-// alert("Welcome to my Website!");
-//
-// let color = prompt("What is your favorite color?");
-//
-// if(userAnswer) {
-//     alert("Great, "+ color + " is my favorite color too!");
-// }
-//
+console.log("Hello from external JavaScript");
+
+alert("Welcome to my Website!");
+
+let color = prompt("What is your favorite color?");
+
+if(userAnswer) {
+    alert("Great, "+ color + " is my favorite color too!");
+}
+
 // // You have rented some movies for your kids:
 // // The little mermaid (for 3 days),
 // // Brother Bear (for 5 days, they love it),
 // // and Hercules (1 day, you don't know yet if they're going to like it).
 // // If price for a movie per day is $3, how much will you have to pay?
-//
-// // let littleM = parseInt(prompt("How many days did you rent The Little Mermaid?"));
-// // let brotherB = parseInt(prompt("How many days did you rent Brother Bear?"));
-// // let hercules = parseInt(prompt("How many days did you rent Hercules?"));
-// //
-// // let totalCost = (littleM + brotherB + hercules) * 3;
-// // // console.log(totalCost);
-// // alert("Total Cost: $" + totalCost);
-//
+
+let littleM = parseInt(prompt("How many days did you rent The Little Mermaid?"));
+let brotherB = parseInt(prompt("How many days did you rent Brother Bear?"));
+let hercules = parseInt(prompt("How many days did you rent Hercules?"));
+
+let totalCost = (littleM + brotherB + hercules) * 3;
+alert("Total Cost: $" + totalCost);
+
 // //     Suppose you're working as a contractor for 3 companies:
 // //     Google, Amazon and Facebook, they pay you a different rate per hour.
 // //     Google pays $400,
@@ -31,21 +30,19 @@
 // //     You worked 10 hours for Facebook,
 // //     6 hours for Google
 // //     and 4 hours for Amazon.
-// const googlePay = 400;
-// const amazonPay = 380;
-// const facebookPay = 350;
-//
-// let googleHours = prompt("How many hours did you work for Google this week?");
-// let amazonHours = prompt("How many hours did you work for Amazon this week?");
-// let facebookHours = prompt("How many hours did you work for Facebook this week?");
-//
-// let totalGooglePay = googlePay * googleHours;
-// let totalAmazonPay = amazonPay * amazonHours;
-// let totalFacebookPay = facebookPay * facebookHours;
-//
-// // alert("Total Google Pay: $" + totalGooglePay + "\nTotal Amazon Pay: $"+ totalAmazonPay + "\nTotal Facebook Pay: $" + totalFacebookPay);
-//
-// alert("Your total pay is: $" + (totalGooglePay + totalAmazonPay + totalFacebookPay).toFixed(2) + " for rental charges ($3 per movie per day.)");
+const googlePay = 400;
+const amazonPay = 380;
+const facebookPay = 350;
+
+let googleHours = prompt("How many hours did you work for Google this week?");
+let amazonHours = prompt("How many hours did you work for Amazon this week?");
+let facebookHours = prompt("How many hours did you work for Facebook this week?");
+
+let totalGooglePay = googlePay * googleHours;
+let totalAmazonPay = amazonPay * amazonHours;
+let totalFacebookPay = facebookPay * facebookHours;
+
+alert("Your total pay is: $" + (totalGooglePay + totalAmazonPay + totalFacebookPay).toFixed(2) + " for rental charges ($3 per movie per day.)");
 
 // A student can be enrolled in a class only if the class is not full and the class schedule does not conflict with her current schedule.
 let isClassOpen = true;
@@ -63,18 +60,3 @@ let isPremiumMember = confirm("Press OK if you are a premium member.");
 let offerApplied = (numberItemsPurchased > 2 && isOfferExpired) || isPremiumMember;
 
 alert("offerApplied: " + offerApplied);
-
-// let username = 'codeup ';
-// let password = 'notastrongpassword';
-//
-// let passAtLeastFive = password.length >= 5;
-// let passNotIncludeUN = password.indexOf(username) === -1;
-// let usernameAtLeastTwenty = username.length <= 20;
-// let noLeadingTrailingWS = (username === username.trim()) &&
-//     (password === password.trim());
-//
-// alert("offerApplied: " + offerApplied + "\npassAtLeastFive: " + passAtLeastFive +
-//     "\npassNotIncludeUN: " + passNotIncludeUN +
-//     "\nusernameAtLeastTwenty: " + usernameAtLeastTwenty +
-//     "\nnoLeadingTrailingWS: " + noLeadingTrailingWS
-// );
