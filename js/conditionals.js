@@ -19,6 +19,18 @@
  * Test your function by passing various string literals to it and
  * console.logging the function's return value
  */
+const analyzeColor = function (name) {
+    if (name === 'blue') {
+        return "blue is the color of the sky";
+    } else if (name === 'red') {
+        return "Strawberries are red";
+    } else if (name === 'cyan') {
+        return "I don't know anything about cyan";
+    } else {
+        return "Please choose a color from the list: blue, red, cyan";
+    }
+}
+// console.log(analyzeColor("blue"));
 
 // Don't change the next two lines!
 // These lines create two variables for you:
@@ -32,11 +44,38 @@ var randomColor = colors[Math.floor(Math.random() * colors.length)];
  * Pass the `randomColor` variable to your function and console.log the results.
  * You should see a different message every time you refresh the page
  */
+const checkRandColor = function (color) {
+    console.log(color + " is the randomly selected color.");
+}
+checkRandColor(randomColor);
 
 /**
  * TODO:
  * Refactor your above function to use a switch-case statement
  */
+switch (randomColor) {
+    case 'red':
+        console.log(randomColor + " is the randomly selected color.");
+        break;
+    case 'orange':
+        console.log(randomColor + " is the randomly selected color.");
+        break;
+    case 'yellow':
+        console.log(randomColor + " is the randomly selected color.");
+        break;
+    case 'green':
+        console.log(randomColor + " is the randomly selected color.");
+        break;
+    case 'blue':
+        console.log(randomColor + " is the randomly selected color.");
+        break;
+    case 'indigo':
+        console.log(randomColor + " is the randomly selected color.");
+        break;
+    case 'violet':
+        console.log(randomColor + " is the randomly selected color.");
+        break;
+}
 
 /**
  * TODO:
@@ -44,6 +83,8 @@ var randomColor = colors[Math.floor(Math.random() * colors.length)];
  * user to your `analyzeColor` function. Alert the return value from your
  * function to show it to the user.
  */
+const color = prompt("Enter a color ");
+alert(analyzeColor(color));
 
 /* ########################################################################## */
 
@@ -66,6 +107,28 @@ var randomColor = colors[Math.floor(Math.random() * colors.length)];
  * Test your function by passing it various values and checking for the expected
  * return value.
  */
+const calculateTotal = function (luckyNum, totalAmt) {
+    switch(luckyNum) {
+        case 1:
+            return (totalAmt - totalAmt * .1).toFixed(2);
+        case 2:
+            return (totalAmt - totalAmt * .25).toFixed(2);
+        case 3:
+            return (totalAmt - totalAmt * .35).toFixed(2);
+        case 4:
+            return (totalAmt - totalAmt * .5).toFixed(2);
+        case 5:
+            return (0).toFixed(2);
+        default:
+            return (totalAmt).toFixed(2);
+    }
+}
+console.log(calculateTotal(0, 100)); // 100
+console.log(calculateTotal(1, 100)); // 90
+console.log(calculateTotal(2, 100)); // 75
+console.log(calculateTotal(3, 100)); // 65
+console.log(calculateTotal(4, 100)); // 50
+console.log(calculateTotal(5, 100)); // 0
 
 /**
  * TODO:
@@ -75,7 +138,11 @@ var randomColor = colors[Math.floor(Math.random() * colors.length)];
  * price before the discount was, and what their price after the discount is.
  */
 // Generate a random number between 0 and 6
-// var luckyNumber = Math.floor(Math.random() * 6);
+var luckyNumber = Math.floor(Math.random() * 6);
+const totalBill = parseFloat(prompt("How much was your total bill?"));
+alert(`Your lucky number is ${luckyNumber}`+
+    `\nYour price before discount $${totalBill}`+
+    `\nYour price after the discount $${calculateTotal(luckyNumber, totalBill)}`);
 
 /**
  * TODO:
@@ -93,3 +160,16 @@ var randomColor = colors[Math.floor(Math.random() * colors.length)];
  * Can you refactor your code to use functions?
  * HINT: The way we prompt for a value could be improved
  */
+const userChoice = confirm("Would you like to enter a number?");
+if (userChoice) {
+    const userNum = parseInt(prompt("Please enter a number"));
+    if (isNaN(userNum)) {
+        alert("You entered a value that is not a number");
+    } else {
+        alert( (userNum % 2 === 0) ? "The number you entered is even." : "The number you entered is odd." );
+        alert(`The number you entered with 100 added to it is ${userNum + 100}.`);
+        alert((userNum > 0)? 'The number you entered is positive.' : 'The number you entered is negative.');
+    }
+} else {
+    // do nothing
+}
