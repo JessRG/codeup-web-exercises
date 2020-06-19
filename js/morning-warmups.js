@@ -100,3 +100,17 @@ function printFirstTenEvenNums() {
 }
 
 // printFirstTenEvenNums();
+
+// Write a function that takes 2 parameters. Starting at the first and counting by the second, will output 5 steps. I.e. countFromBy(10,5) results in:
+// 10
+// 15
+// 20
+// 25
+// 30
+const countFromBy = function (from, by) {
+    for (let i = 0; i < 5; i++) {
+        console.log(from);
+        from += by;
+    }
+}
+// countFromBy(10, 5);
