@@ -45,7 +45,23 @@ var randomColor = colors[Math.floor(Math.random() * colors.length)];
  * You should see a different message every time you refresh the page
  */
 const checkRandColor = function (color) {
-    console.log(color + " is the randomly selected color.");
+    if (color === 'red') {
+        console.log(color + ' is the randomly selected color.');
+    } else if (color === 'orange') {
+        console.log(color + ' is the randomly selected color.');
+    } else if (color === 'yellow') {
+        console.log(color + ' is the randomly selected color.');
+    } else if (color === 'green') {
+        console.log(color + ' is the randomly selected color.');
+    } else if (color === 'blue') {
+        console.log(color + ' is the randomly selected color.');
+    } else if (color === 'indigo') {
+        console.log(color + ' is the randomly selected color.');
+    } else if (color === 'violet') {
+        console.log(color + ' is the randomly selected color.');
+    } else {
+        // do nothing
+    }
 }
 checkRandColor(randomColor);
 
@@ -75,6 +91,8 @@ switch (randomColor) {
     case 'violet':
         console.log(randomColor + " is the randomly selected color.");
         break;
+    default:
+        // do nothing
 }
 
 /**
@@ -141,8 +159,8 @@ console.log(calculateTotal(5, 100)); // 0
 var luckyNumber = Math.floor(Math.random() * 6);
 const totalBill = parseFloat(prompt("How much was your total bill?"));
 alert(`Your lucky number is ${luckyNumber}`+
-    `\nYour price before discount $${totalBill}`+
-    `\nYour price after the discount $${calculateTotal(luckyNumber, totalBill)}`);
+    `\nYour price before discount: $${totalBill}`+
+    `\nYour price after the discount: $${calculateTotal(luckyNumber, totalBill)}`);
 
 /**
  * TODO:
