@@ -10,7 +10,7 @@
      * > sayHello("codeup") // returns "Hello, codeup!"
      */
     function sayHello(name) {
-        return `Hello ${name}`;
+        return `Hello ${name}!`;
     }
 
     /**
@@ -20,7 +20,7 @@
      *
      * console.log 'helloMessage' to check your work
      */
-    const helloMessage = sayHello('Andre')
+    const helloMessage = sayHello('Hyperion')
     console.log(helloMessage);
 
     /**
@@ -29,7 +29,7 @@
      * variable to the 'sayHello' function. You should see the same output in the
      * console.
      */
-    const myName = 'Jesus Garza';
+    const myName = 'Hyperion';
     console.log(sayHello(myName));
 
 // Don't modify the following line, it generates a random number between 1 and 3
@@ -53,8 +53,8 @@
      * different result everytime you refresh the page if you are using the random
      * number)
      */
-    function isTwo(num) {
-        return num / 2 === 1;
+    const isTwo = function (num) {
+        return num === 2;
     }
     console.log(isTwo(random));
 
@@ -98,7 +98,7 @@
      *
      * > applyDiscount(45.99, 0.12) // 40.4712
      */
-    function applyDiscount(price, discount) {
+    const applyDiscount = function (price, discount) {
         return price - price * discount;
     }
     console.log(applyDiscount(100, Math.random()));
