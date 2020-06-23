@@ -114,3 +114,56 @@ const countFromBy = function (from, by) {
     }
 }
 // countFromBy(10, 5);
+
+// Write a JS function called magic8Ball that takes in one number as a parameter.
+// The return value should be one of the following strings that correlates to the number passed in.
+// As I see it, yes.
+// Ask again later.
+// Better not tell you now.
+// Cannot predict now.
+// Concentrate and ask again.
+// Don’t count on it.
+// Outlook not so good.
+// Outlook is good.
+
+// const magicBall = function (param) {
+//     let strs = ["As I see it, yes.", "Ask again later.", "Better not tell you now", "Cannot predict now.",
+//         "Concentrate and ask again.", "Don't count on it.", "Outlook not so good.", "Outlook is good."];
+//
+//     return strs[param-1];
+// }
+// const luckyNumber = parseInt(prompt("Enter a number between 1 and 8"));
+// alert(magicBall(luckyNumber));
+
+const magicBall = function (param) {
+    switch(param) {
+        case 1:
+            return "some string"
+            break;
+        case 2:
+            return "some string"
+            break;
+        case 3:
+            return "some string"
+            break;
+        case 4:
+            return "some string"
+            break;
+        case 5:
+            return "some string"
+            break;
+        case 6:
+            return "some string"
+            break;
+        case 7:
+            return "some string"
+            break;
+        case 8:
+            return "some string"
+            break;
+    }
+
+    // return strs[param-1];
+}
+const luckyNumber = parseInt(prompt("Enter a number between 1 and 8"));
+alert(magicBall(luckyNumber));

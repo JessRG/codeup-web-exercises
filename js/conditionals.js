@@ -27,10 +27,10 @@ const analyzeColor = function (name) {
     } else if (name === 'cyan') {
         return "I don't know anything about cyan";
     } else {
-        return "Please choose a color from the list: blue, red, cyan";
+        return "I don't know much about that color.";
     }
 }
-// console.log(analyzeColor("blue"));
+console.log(analyzeColor("blue"));
 
 // Don't change the next two lines!
 // These lines create two variables for you:
@@ -63,7 +63,7 @@ const checkRandColor = function (color) {
         // do nothing
     }
 }
-checkRandColor(randomColor);
+console.log(analyzeColor(randomColor));
 
 /**
  * TODO:
@@ -71,28 +71,16 @@ checkRandColor(randomColor);
  */
 switch (randomColor) {
     case 'red':
-        console.log(randomColor + " is the randomly selected color.");
+        console.log("Strawberries are red.");
         break;
     case 'orange':
-        console.log(randomColor + " is the randomly selected color.");
+        console.log("Oranges are orange.");
         break;
     case 'yellow':
-        console.log(randomColor + " is the randomly selected color.");
-        break;
-    case 'green':
-        console.log(randomColor + " is the randomly selected color.");
-        break;
-    case 'blue':
-        console.log(randomColor + " is the randomly selected color.");
-        break;
-    case 'indigo':
-        console.log(randomColor + " is the randomly selected color.");
-        break;
-    case 'violet':
-        console.log(randomColor + " is the randomly selected color.");
+        console.log("Lemons are yellow.");
         break;
     default:
-        // do nothing
+        console.log("I don't know much about the color " + randomColor);
 }
 
 /**
@@ -180,14 +168,15 @@ alert(`Your lucky number is ${luckyNumber}`+
  */
 const userChoice = confirm("Would you like to enter a number?");
 if (userChoice) {
-    const userNum = parseInt(prompt("Please enter a number"));
+    let userNum = parseInt(prompt("Please enter a number").replace('\"', ''));
+    console.log(userNum);
     if (isNaN(userNum)) {
         alert("You entered a value that is not a number");
     } else {
         alert( (userNum % 2 === 0) ? "The number you entered is even." : "The number you entered is odd." );
         alert(`The number you entered with 100 added to it is ${userNum + 100}.`);
-        alert((userNum > 0)? 'The number you entered is positive.' : 'The number you entered is negative.');
+        alert( (userNum > 0) ? 'The number you entered is positive.' : 'The number you entered is negative.' );
     }
 } else {
-    // do nothing
+    alert("You selected not to input a number.");
 }
