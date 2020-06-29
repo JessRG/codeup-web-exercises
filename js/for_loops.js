@@ -8,19 +8,19 @@ showMultiplication(7);
 const isEvenOrOdd = function () {
     let random;
     for (let i = 0; i < 10; i++) {
-        random = Math.floor((Math.random() * 200) + 20);
-        console.log(`${random} is ${ random %2 === 0 ? 'even' : 'odd'}`);
+        random = Math.floor(Math.random() * 180) + 20;
+        console.log(`${random} is ${ random % 2 === 0 ? 'even' : 'odd'}`);
     }
 }
 isEvenOrOdd();
 
 const incrementWithNums = function () {
-    for (let i = 0; i < 10; i++) {
+    for (let i = 1; i < 10; i++) {
         let str = '';
         for(let j = 0; j < i; j++) {
             str = str.concat(i.toString());
         }
-        if (i > 0) console.log(str);
+        console.log(str);
     }
 }
 incrementWithNums();

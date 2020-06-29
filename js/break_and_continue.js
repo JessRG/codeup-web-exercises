@@ -1,4 +1,3 @@
-// let i = 50;
 
 let input;
 while(true) {
