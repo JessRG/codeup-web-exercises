@@ -165,5 +165,16 @@ const magicBall = function (param) {
 
     // return strs[param-1];
 }
-const luckyNumber = parseInt(prompt("Enter a number between 1 and 8"));
-alert(magicBall(luckyNumber));
+// const luckyNumber = parseInt(prompt("Enter a number between 1 and 8"));
+// alert(magicBall(luckyNumber));
+
+const toggleLight = function () {
+    if (light === "on") return light = "off";
+    else return light = "on";
+    // return !light;
+}
+
+let light = "off";
+console.log("lights are " + light);
+toggleLight();
+console.log("lights are now " + light);
