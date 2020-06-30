@@ -174,7 +174,28 @@ const toggleLight = function () {
     // return !light;
 }
 
-let light = "off";
-console.log("lights are " + light);
-toggleLight();
-console.log("lights are now " + light);
+// let light = "off";
+// console.log("lights are " + light);
+// toggleLight();
+// console.log("lights are now " + light);
+
+// Write a JS function that will loop through the numbers 1-10 and output whether each is even or odd. Ie:
+// 1 is odd
+// 2 is even
+// 3 ...
+const evenOrOdd = function () {
+    for (let i = 0; i < 10; i++) {
+        console.log((i+1) % 2 === 0 ? (i+1) + " is even" : (i+1) + " is odd");
+    }
+
+    // let num = 0;
+    // while (num < 10) {
+    //     if ((num + 1) % 2 === 0) {
+    //         console.log((num + 1) + " is even");
+    //     } else {
+    //         console.log((num + 1) + " is odd");
+    //     }
+    //     num++;
+    // }
+}
+evenOrOdd();
