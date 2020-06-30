@@ -15,12 +15,14 @@ const isEvenOrOdd = function () {
 isEvenOrOdd();
 
 const incrementWithNums = function () {
-    for (let i = 1; i < 10; i++) {
-        let str = '';
-        for(let j = 0; j < i; j++) {
-            str = str.concat(i.toString());
-        }
-        console.log(str);
+    for (let i = 0; i < 9; i++) {
+        // let str = '';
+        // for(let j = 0; j < i; j++) {
+        //     str = str.concat(i.toString());
+        // }
+        // console.log(str);
+        let str = (i+1).toString();
+        console.log(str.repeat(i+1));
     }
 }
 incrementWithNums();
