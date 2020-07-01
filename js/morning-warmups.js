@@ -198,4 +198,29 @@ const evenOrOdd = function () {
     //     num++;
     // }
 }
-evenOrOdd();
+// evenOrOdd();
+
+/*
+* Pseudo-Code
+* 1. Define a function with the name doubleChar("string")
+* 2. It should return typeof string
+* 3. Create a new variable to hold the returnString
+* 4. Loop (for, while, do while loops) through the parameter and check
+*    each character ([index]), concat that character twice to the returnString
+* 5. Return the returnString
+* */
+
+const doubleChar = function (str) {
+    let resStr = "";
+    for (let i = 0; i < str.length; i++) {
+        // if (str[i] === " ") {
+        //     resStr = resStr.concat(str[i]);
+        //     continue;
+        // }
+        resStr += str[i].repeat(2);
+    }
+    return resStr;
+}
+console.log(doubleChar("Hello World"));
+console.log(doubleChar("String"));
+console.log(doubleChar("1234!_ "));

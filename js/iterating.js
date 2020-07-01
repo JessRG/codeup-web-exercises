@@ -13,7 +13,7 @@
      * Create a log statement that will log the number of elements in the names
      * array.
      */
-    console.log("The number of elements in names array: " + names.length);
+    console.log("The number of elements in names array: " + names.length + ".");
 
     /**
      * TODO:
