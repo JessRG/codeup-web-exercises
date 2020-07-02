@@ -26,12 +26,10 @@
     // join planetsArray with break html tags as delimiter
     console.log(planetsArray.join("<br>"));
 
-    // Declared an empty array to build new array of planets with opening and closing list item tags
+    // Declared an empty array to build new array of planetsArray with opening and closing list item tags
     let planetsArr = [];
     for(let i = 0; i < planetsArray.length; i++) {
-        planetsArr.push("<li>");
-        planetsArr.push(planetsArray[i]);
-        planetsArr.push("</li>");
+        planetsArr.push("<li>" + planetsArray[i] + "</li>");
     }
 
     // Add opening and closing unordered list tags to the newly built planets array (planetsArr)
@@ -39,7 +37,7 @@
     planetsArr.push("</ul>");
 
     // join planetsArr and store in strList variable
-    const strList = planetsArr.join("");
+    const strList = planetsArr.join(" ");
     console.log(strList);
     document.getElementById("planetsUL").innerHTML = strList;
 })();
