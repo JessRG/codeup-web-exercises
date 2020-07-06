@@ -70,43 +70,43 @@
      * > console.log(books[0].author.firstName) // "Douglas"
      * > console.log(books[0].author.lastName) // "Adams"
      */
-    // const books = [
-    //     {
-    //         title: "The Salmon of Doubt",
-    //         author: {
-    //             firstName: "Douglas",
-    //             lastName: "Adams"
-    //         }
-    //     },
-    //     {
-    //         title: "Head First Java",
-    //         author: {
-    //             firstName: "Kathy",
-    //             lastName: "Sierra"
-    //         }
-    //     },
-    //     {
-    //         title: "SQL Queries For Mere Mortals",
-    //         author: {
-    //             firstName: "John",
-    //             lastName: "Viescas"
-    //         }
-    //     },
-    //     {
-    //         title: "Spring in Action",
-    //         author: {
-    //             firstName: "Craig",
-    //             lastName: "Walls"
-    //         }
-    //     },
-    //     {
-    //         title: "A Brief History of Time",
-    //         author: {
-    //             firstName: "Stephen",
-    //             lastName: "Hawking"
-    //         }
-    //     }
-    // ];
+    const books = [
+        {
+            title: "The Salmon of Doubt",
+            author: {
+                firstName: "Douglas",
+                lastName: "Adams"
+            }
+        },
+        {
+            title: "Head First Java",
+            author: {
+                firstName: "Kathy",
+                lastName: "Sierra"
+            }
+        },
+        {
+            title: "SQL Queries For Mere Mortals",
+            author: {
+                firstName: "John",
+                lastName: "Viescas"
+            }
+        },
+        {
+            title: "Spring in Action",
+            author: {
+                firstName: "Craig",
+                lastName: "Walls"
+            }
+        },
+        {
+            title: "A Brief History of Time",
+            author: {
+                firstName: "Stephen",
+                lastName: "Hawking"
+            }
+        }
+    ];
 
     /**
      * TODO:
@@ -132,11 +132,11 @@
      *      ---
      *      ...
      */
-    // for (let i = 0; i < books.length; i++) {
-    //     console.log(`Book # ${i+1}\nTitle: ${books[i].title}` +
-    //         `\nAuthor: ${books[i].author.firstName} ${books[i].author.lastName}` +
-    //         '\n---');
-    // }
+    for (let i = 0; i < books.length; i++) {
+        console.log(`Book # ${i+1}\nTitle: ${books[i].title}` +
+            `\nAuthor: ${books[i].author.firstName} ${books[i].author.lastName}` +
+            '\n---');
+    }
 
     /**
      * Bonus:
@@ -148,6 +148,7 @@
      *   outputs the information described above. Refactor your loop to use your
      *   `showBookInfo` function.
      */
+    console.log("\n***** Bonus *****\n\n");
     const createBook = function (title, author) {
         const name = author.split(" ");
         return {
