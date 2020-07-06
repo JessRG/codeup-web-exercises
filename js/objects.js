@@ -136,11 +136,11 @@
      *      ---
      *      ...
      */
-    for (let i = 0; i < books.length; i++) {
-        console.log(`Book # ${i+1}\nTitle: ${books[i].title}` +
-            `\nAuthor: ${books[i].author.firstName} ${books[i].author.lastName}` +
+    books.forEach(function (book, index)  {
+        console.log(`Book # ${index + 1}\nTitle: ${book.title}` +
+            `\nAuthor: ${book.author.firstName} ${book.author.lastName}` +
             '\n---');
-    }
+    })
 
     /**
      * Bonus:
@@ -178,7 +178,7 @@
             '\n---';
     }
 
-    for (let i = 0; i < booksArr.length; i++) {
-        console.log(`Book # ${i+1} ${showBookInfo(booksArr[i])}`);
-    }
+    booksArr.forEach(function (book, index)  {
+        console.log(`Book # ${index+1} ${showBookInfo(book)}`);
+    })
 })();
