@@ -170,15 +170,13 @@
         createBook("SQL Queries For Mere Mortals", "John Viescas"),
         createBook("Spring in Action", "Craig Walls"),
         createBook("A Brief History of Time", "Stephen Hawking")
-    ]
+    ];
 
-    const showBookInfo = function (book) {
-        return `\nTitle: ${book.title}` +
+    const showBookInfo = function (book, index) {
+        console.log(`Book # ${index+1}\nTitle: ${book.title}` +
             `\nAuthor: ${book.author.firstName} ${book.author.lastName}` +
-            '\n---';
-    }
+            '\n---');
+    };
 
-    booksArr.forEach(function (book, index)  {
-        console.log(`Book # ${index+1} ${showBookInfo(book)}`);
-    })
+    booksArr.forEach(showBookInfo);
 })();
