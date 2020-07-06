@@ -13,7 +13,10 @@
      */
     const person = {
         firstName: "Jesus",
-        lastName: "Garza"
+        lastName: "Garza",
+        sayHello: function () {
+            return `Hello from ${this.firstName} ${this.lastName}!`;
+        }
     }
 
     console.log(person.firstName);
@@ -28,6 +31,7 @@
      * Example
      * > console.log(person.sayHello()) // "Hello from Rick Sanchez!"
      */
+    console.log(person.sayHello());
 
     /** TODO:
      * HEB has an offer for the shoppers that buy products amounting to
