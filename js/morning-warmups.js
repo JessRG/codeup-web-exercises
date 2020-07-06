@@ -221,6 +221,22 @@ const doubleChar = function (str) {
     }
     return resStr;
 }
-console.log(doubleChar("Hello World"));
-console.log(doubleChar("String"));
-console.log(doubleChar("1234!_ "));
+// console.log(doubleChar("Hello World"));
+// console.log(doubleChar("String"));
+// console.log(doubleChar("1234!_ "));
+
+const fizzBuzz = function (num) {
+    for (let i = 0; i < num; i++) {
+        if ((i + 1) % 3 === 0 && (i + 1) % 5 === 0) {
+            console.log("FizzBuzz");
+        } else if ((i + 1) % 3 === 0) {
+            console.log("Fizz");
+        } else if ((i + 1) % 5 === 0) {
+            console.log("Buzz");
+        } else {
+            console.log((i + 1));
+        }
+    }
+}
+
+fizzBuzz(30);
