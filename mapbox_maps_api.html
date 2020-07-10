@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>MapBox API</title>
+    <link href='https://api.mapbox.com/mapbox-gl-js/v1.11.1/mapbox-gl.css' rel='stylesheet' />
+    <style>
+        #mapBox {
+            width: 100%;
+            height: 700px;
+        }
+    </style>
+</head>
+<body>
+    <h2>My First MapBox Map!</h2>
+
+    <!-- MapBox Section -->
+    <div id="mapBox"></div>
+    <script src='https://api.mapbox.com/mapbox-gl-js/v1.11.1/mapbox-gl.js'></script>
+    <script src="js/keys.js"></script>
+    <script>
+        mapboxgl.accessToken = MAPBOXKEY;
+        const map = new mapboxgl.Map({
+            container: 'mapBox',
+            style: 'mapbox://styles/mapbox/streets-v11', // stylesheet location
+            center: [ -74.5, 40 ], // starting position [lng, lat]
+            zoom: 0 // starting zoom
+        });
+
+        // using the jumpTo function on mapBox to reposition the center and change the zoom
+        map.jumpTo({
+            center: [ -97.397308, 27.800581 ],
+            zoom: 10
+        });
+
+        let popup1 = new mapboxgl.Popup()
+            .setHTML("<h3>Ol' SteakHouse</h3>");
+
+        let restaurant1 = new mapboxgl.Marker()
+        .setLngLat([ -97.372308, 27.729567 ])
+        .setPopup(popup1)
+        .addTo(map);
+
+        let popup2 = new mapboxgl.Popup()
+            .setHTML("<h3>Brooklyn Pie Co.</h3>");
+
+        let restaurant2 = new mapboxgl.Marker()
+        .setLngLat([ -97.221531, 27.600999 ])
+        .setPopup(popup2)
+        .addTo(map);
+
+    </script>
+    <!-- MapBox Section End -->
+</body>
+</html>
