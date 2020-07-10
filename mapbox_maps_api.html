@@ -32,23 +32,35 @@
             center: [ -97.397308, 27.800581 ],
             zoom: 10
         });
+        map.scrollZoom.disable();
 
-        let popup1 = new mapboxgl.Popup()
-            .setHTML("<h3>Ol' SteakHouse</h3>");
+        // Declared an array to store the map markers
+        const restaurants = [];
 
-        let restaurant1 = new mapboxgl.Marker()
-        .setLngLat([ -97.372308, 27.729567 ])
-        .setPopup(popup1)
-        .addTo(map);
+        // createMarker function which builds the markers for mapBox
+        const createMarker = function (strHTML, lngLat, img) {
+            const popup = new mapboxgl.Popup()
+                .setHTML(`<h3>${strHTML}</h3>` +
+                `<img src=${img} width='90px' height='75px' />`);
 
-        let popup2 = new mapboxgl.Popup()
-            .setHTML("<h3>Brooklyn Pie Co.</h3>");
+            const r1 = new mapboxgl.Marker()
+                .setLngLat(lngLat)
+                .setPopup(popup);
+            restaurants.push(r1);
+        }
+        // First restaurant
+        createMarker("Ol' Steakhouse", [ -97.372308, 27.729567 ], "img/OlSteakhouse.jpg");
 
-        let restaurant2 = new mapboxgl.Marker()
-        .setLngLat([ -97.221531, 27.600999 ])
-        .setPopup(popup2)
-        .addTo(map);
+        // Second restaurant
+        createMarker("Brooklyn Pie Co.", [ -97.221531, 27.600999 ], "img/BrooklynPiePizza.jpeg");
 
+        // Third restaurant
+        createMarker("Andy's Kitchen", [ -97.376520, 27.696641 ], "img/AndysKitchen.jpg");
+
+        // forEach to add each marker to the map
+        restaurants.forEach(function (place) {
+            place.addTo(map);
+        });
     </script>
     <!-- MapBox Section End -->
 </body>
