@@ -34,28 +34,25 @@
         });
         map.scrollZoom.disable();
 
-        // Declared an array to store the map markers
-        const restaurants = [];
-
         // createMarker function which builds the markers for mapBox
-        const createMarker = function (strHTML, lngLat, img) {
+        const createMarker = function (strHTML, lngLat) {
             const popup = new mapboxgl.Popup()
-                .setHTML(`<h3>${strHTML}</h3>` +
-                `<img src=${img} width='90px' height='75px' />`);
+                .setHTML(`<h3>${strHTML}</h3>`);
 
-            const r1 = new mapboxgl.Marker()
+            return new mapboxgl.Marker()
                 .setLngLat(lngLat)
                 .setPopup(popup);
-            restaurants.push(r1);
         }
-        // First restaurant
-        createMarker("Ol' Steakhouse", [ -97.372308, 27.729567 ], "img/OlSteakhouse.jpg");
 
-        // Second restaurant
-        createMarker("Brooklyn Pie Co.", [ -97.221531, 27.600999 ], "img/BrooklynPiePizza.jpeg");
-
-        // Third restaurant
-        createMarker("Andy's Kitchen", [ -97.376520, 27.696641 ], "img/AndysKitchen.jpg");
+        // Declared an array and stored each map markers
+        const restaurants = [
+            // First restaurant
+            createMarker("Ol' Steakhouse", [ -97.372308, 27.729567 ]),
+            // Second restaurant
+            createMarker("Brooklyn Pie Co.", [ -97.221531, 27.600999 ]),
+            // Third restaurant
+            createMarker("Andy's Kitchen", [ -97.376520, 27.696641 ])
+        ];
 
         // forEach to add each marker to the map
         restaurants.forEach(function (place) {
