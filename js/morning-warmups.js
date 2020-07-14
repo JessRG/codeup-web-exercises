@@ -239,4 +239,26 @@ const fizzBuzz = function (num) {
     }
 }
 
-fizzBuzz(30);
+// fizzBuzz(30);
+
+const fib = function (num) {
+    let fibonacci = [ 0, 1 ];
+
+    // Build fibonacci sequence with for loop
+    for (let i = 0; i < num - 2 ; i++) {
+        fibonacci.push(fibonacci[i] + fibonacci[i+1]);
+    }
+    return fibonacci;
+}
+
+// console.log(fib(10));
+
+// Write a function that takes in a three digit integer and returns the digit in the tens
+function returnTensDigit(num) {
+    // return '' + num.toString() [1];
+    const l = Math.pow(10, Math.floor(Math.log(num)/Math.log(10)) - 1);
+    const b = Math.floor(num/l);
+    return b - Math.floor(b/10)*10;
+}
+
+console.log(returnTensDigit(354));
