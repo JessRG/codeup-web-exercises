@@ -255,10 +255,10 @@ const fib = function (num) {
 
 // Write a function that takes in a three digit integer and returns the digit in the tens
 function returnTensDigit(num) {
-    // return '' + num.toString() [1];
-    const l = Math.pow(10, Math.floor(Math.log(num)/Math.log(10)) - 1);
-    const b = Math.floor(num/l);
-    return b - Math.floor(b/10)*10;
+    return Number(String(num) [String(num).length - 2]);
+    // const l = Math.pow(10, Math.floor(Math.log(num)/Math.log(10)) - 1);
+    // const b = Math.floor(num/l);
+    // return b - Math.floor(b/10)*10;
 }
 
 console.log(returnTensDigit(354));
