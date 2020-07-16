@@ -5,16 +5,104 @@
     <title>JQuery</title>
 </head>
 <body>
-    <h1>Sample HTML Element</h1>
+    <h1 id="pageTitle" class="title">We are learning jQuery in 2020!</h1>
+    <h1>Paragraphs Section</h1>
+    <p id="p1" class="codeup">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias animi aperiam, consectetur consequatur debitis
+        deserunt dolorem doloremque est harum itaque, laborum mollitia omnis optio porro quas saepe sint veniam
+        voluptate.
+    </p>
+    <p id="p2" class="">A, adipisci aperiam commodi consectetur corporis cum cupiditate delectus doloribus facere laudantium libero
+        maiores mollitia neque nobis porro praesentium provident quas quibusdam, quidem recusandae similique, sint
+        voluptatibus? Atque dolores, ea?
+    </p>
+
+    <p id="p3" class="codeup">HelloworldHelloworldHelloworldHelloworldHelloworldHelloworldHelloworldHelloworldHelloworldHelloworldHelloworldHelloworldHelloworldHelloworldHelloworld HelloworldHelloworldHelloworldHelloworldHelloworldHelloworldHelloworld HelloworldHelloworldHelloworld</p>
+
+    <h1>Unorder List Section</h1>
+    <ul id="pageUL" class="UL">
+        <li>List Item 1</li>
+        <li>List Item 2</li>
+        <li>List Item 3</li>
+        <li>List Item 4</li>
+        <li>List Item 5</li>
+    </ul>
+
+    <h1>Div Section</h1>
+    <div id="pageDiv" class="codeup">This is a div element at bottom of the page.</div>
+
     <script src="js/jquery-3.5.1.js"></script>
     <script>
         $(document).ready(function () {
-            // JS code example here
-            alert("This DOM has finished loading.");
-            $("h1").html("Next Steps...");
-        })
+            // ID Selectors
+            // alert($("#pageTitle").html());\
 
+            // setting two elements with the same id does not change the jQuery selection unless one element is placed above the other
+            // whichever element occurs first on the page will be rendered or some kind of action will be done by jQuery
+            // alert($("#p1").html());
 
+            // Class Selectors
+            // changing the name property of another element's class attribute to the class name specified below applies the css definition
+            // $(".codeup").css({
+            //     border: "1px solid red"
+            // });
+
+            // Element Selectors
+            $(".UL, li").css({
+                fontSize: "20px"
+            });
+            $("h1").css({
+                backgroundColor: "lightgray"
+            });
+            $("p").css({
+                backgroundColor: "skyblue"
+            });
+            $("li").css({
+                backgroundColor: "lightyellow"
+            });
+
+            let text = '';
+
+            $.each($("h1"), function (key, value) {
+                text += value.innerHTML + "\n";
+            })
+
+            // $("h1").each(function () {
+            //     text +=  $(this).text() + "\n";
+            // })
+
+            // alert($.map($('h1'), (v,i) => $(v).text()).join(", "));
+
+            // for (let elem of $("h1")) {
+            //     text += elem.innerText +"\n"
+            // }
+
+            alert(text);
+
+            // Multiple Selectors
+            $("h1, p, li").css({
+                backgroundColor: "skyblue"
+            });
+        });
+
+        // JS code example
+        // alert("This DOM has finished loading. The page is ready to go!");
+        // $("h1").html("Next Steps...");
+
+        // this is the vanilla javascript way
+        // let stripes = document.getElementsByClassName("odd");
+        // for(let i = 0; i < stripes.length; i++) {
+        //     stripes[i].style.backgroundColor = "lightgrey";
+        // }
+
+        // $(".odd").css({'background-color':'lightgrey'});
+        // jQuery('.lorem').css({textDecoration: "underline"});
+        // $(".odd").toggle(1000).toggle(1000).toggle(1000).toggle(1000);
+
+        // $("h1, #hello").css({
+        //     backgroundColor: "yellow",
+        //     color: "red"
+        // });
+        // $("*").css("border", "1px solid #F00");
     </script>
 </body>
 </html>
