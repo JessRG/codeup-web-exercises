@@ -261,4 +261,18 @@ function returnTensDigit(num) {
     // return b - Math.floor(b/10)*10;
 }
 
-console.log(returnTensDigit(354));
+// console.log(returnTensDigit(354));
+
+// Write a function that will return an array passed sorted in reverse alphabetical order,
+// when passed an array of strings. It should return null if any element within the array is not a string.
+function revStringArray(strArr) {
+    for (let i = 0; i < strArr.length; i++) {
+        if (typeof strArr[i] !== "string") {
+            return null;
+        }
+    }
+    return strArr.sort().reverse();
+}
+
+console.log(revStringArray([0]));
+console.log(revStringArray([ "Prim", "Imar", "Rima", "Mary"]));
