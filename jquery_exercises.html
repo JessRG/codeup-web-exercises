@@ -3,6 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <title>JQuery</title>
+    <style>
+        .highlighted {
+            background-color: #eeff00;
+        }
+
+        .changeFontSize {
+            font-size: 18px;
+        }
+
+        .listItemColorRed {
+            color: red;
+        }
+    </style>
 </head>
 <body>
     <h1 id="pageTitle" class="title">We are learning jQuery in 2020!</h1>
@@ -18,7 +31,7 @@
 
     <p id="p3" class="codeup">HelloworldHelloworldHelloworldHelloworldHelloworldHelloworldHelloworldHelloworldHelloworldHelloworldHelloworldHelloworldHelloworldHelloworldHelloworld HelloworldHelloworldHelloworldHelloworldHelloworldHelloworldHelloworld HelloworldHelloworldHelloworld</p>
 
-    <h1>Unorder List Section</h1>
+    <h1>Unordered List Section</h1>
     <ul id="pageUL" class="UL">
         <li>List Item 1</li>
         <li>List Item 2</li>
@@ -33,6 +46,7 @@
     <script src="js/jquery-3.5.1.js"></script>
     <script>
         $(document).ready(function () {
+            /** jQuery Selectors Exercise Start **/
             // ID Selectors
             // alert($("#pageTitle").html());\
 
@@ -47,41 +61,63 @@
             // });
 
             // Element Selectors
-            $(".UL, li").css({
-                fontSize: "20px"
-            });
-            $("h1").css({
-                backgroundColor: "lightgray"
-            });
-            $("p").css({
-                backgroundColor: "skyblue"
-            });
-            $("li").css({
-                backgroundColor: "lightyellow"
-            });
+            // $(".UL, li").css({
+            //     fontSize: "20px"
+            // });
+            // $("h1").addClass("highlighted");
+            // $("p").addClass("highlighted");
+            // $("li").addClass("highlighted");
 
-            let text = '';
-
-            $.each($("h1"), function (key, value) {
-                text += value.innerHTML + "\n";
-            })
-
-            // $("h1").each(function () {
-            //     text +=  $(this).text() + "\n";
+            // let text = '';
+            //
+            // $.each($("h1"), function (key, value) {
+            //     text += value.innerHTML + "\n";
             // })
+            //
+            // // $("h1").each(function () {
+            // //     text +=  $(this).text() + "\n";
+            // // })
+            //
+            // // alert($.map($('h1'), (v,i) => $(v).text()).join(", "));
+            //
+            // // for (let elem of $("h1")) {
+            // //     text += elem.innerText +"\n"
+            // // }
+            //
+            // alert(text);
+            //
+            // // Multiple Selectors
+            // $("h1, p, li").addClass("highlighted");
+            /** jQuery Selectors Exercise End **/
 
-            // alert($.map($('h1'), (v,i) => $(v).text()).join(", "));
-
-            // for (let elem of $("h1")) {
-            //     text += elem.innerText +"\n"
-            // }
-
-            alert(text);
-
-            // Multiple Selectors
-            $("h1, p, li").css({
-                backgroundColor: "skyblue"
+            /** jQuery Events: Mouse Events Exercise Start **/
+            // h1 (title class) click event handler
+            $(".title").click(function () {
+                if ($(this).hasClass("highlighted")) {
+                    $(this).removeClass("highlighted");
+                } else {
+                    $(this).addClass("highlighted");
+                }
             });
+
+            // Paragraph double click event handler
+            $("p").dblclick(function () {
+                if ($(this).hasClass("changeFontSize")) {
+                    $(this).removeClass("changeFontSize");
+                } else {
+                    $(this).addClass("changeFontSize");
+                }
+            });
+
+            // list item hover event handler
+            $("li").hover(
+                function () {
+                    $(this).addClass("listItemColorRed");
+                },
+                function () {
+                    $(this).removeClass("listItemColorRed");
+            });
+            /** jQuery Events: Mouse Events Exercise End **/
         });
 
         // JS code example
