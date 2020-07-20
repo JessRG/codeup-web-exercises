@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Cheat Codes Code</title>
+</head>
+<body>
+    <div id="titleContainer">
+        <h1>Cheat Code Entry (Press SpaceBar after entering code sequence)</h1>
+    </div>
+
+    <div id="element"></div>
+
+    <script src="/js/jquery.js"></script>
+    <script>
+        "use strict";
+
+        $(document).ready(function() {
+            $("#titleContainer").children("h1").css({
+                width: "fit-content",
+                margin: "5em auto"
+            });
+
+            // Contra (Nintendo Entertainment System)
+            const contraCode = [ "ArrowUp", "ArrowUp", "ArrowDown", "ArrowDown", "ArrowLeft",
+                "ArrowRight", "ArrowLeft", "ArrowRight", "KeyA", "KeyB", "Enter"
+            ];
+            const contraObj = {
+                pic: "url(./img/contra.png)",
+                music: "./audio/contraTitle.mp3",
+                width: 256,
+                height: 224
+            };
+
+            // Contra Hard Corps (Sega Genesis)
+            const contraHcCode = [ "ArrowUp", "ArrowUp", "ArrowDown", "ArrowDown", "KeyA",
+                "ArrowUp", "ArrowUp", "ArrowDown", "ArrowDown", "KeyB",
+                "ArrowUp", "ArrowUp", "ArrowDown", "ArrowDown", "KeyC"
+            ];
+            const contraHcObj = {
+                pic: "url(./img/contraHardCorps.png)",
+                music: "./audio/contraHardCorps.mp3",
+                width: 320,
+                height: 224
+            };
+
+            // Mortal Kombat (Sega Genesis)
+
+            // Input array to store the users key entries
+            let userInputCode = [];
+
+            $(document).on("keydown", function(event) {
+                if (event.code !== "Space") {
+                    console.log(event.code);
+                    userInputCode.push(event.code);
+                }
+            });
+
+            // function to check if the user's code entry sequence matches the game's actual code sequence
+            const checkInput = function (userCode, codeSeq) {
+                const uc = userCode.join("");
+                const cc = codeSeq.join("");
+                return uc === cc;
+            }
+
+            // activateCheats function to display image and play music in the background
+            const activateCheats = function (uic, codeSeq, specs) {
+                $("#element").css({
+                    backgroundImage: specs.pic,
+                    width: specs.width,
+                    height: specs.height,
+                    margin: "5em auto"
+                });
+
+                // Activate Cheats
+                let audio = new Audio(specs.music);
+                audio.play();
+
+                $("h1").html("Cheater Detected!!! 🤟 👍 😎");
+                $("#titleContainer").append("<h3 class='resetPage'>Click Here to reset</h3>").children(".resetPage").css({
+                    width: "fit-content",
+                    margin: "5em auto"
+                });
+            }
+
+            $(document).on("keypress", function(e) {
+                if (e.code === "Space") {
+                    if (checkInput(userInputCode, contraCode)) {
+                        activateCheats(userInputCode, contraCode, contraObj);
+                    } else if (checkInput(userInputCode, contraHcCode)) {
+                        activateCheats(userInputCode, contraHcCode, contraHcObj);
+                    }
+                    userInputCode = [];
+
+                    $("#titleContainer").children(".resetPage").on("click", function() {
+                        location.reload();
+                    });
+                }
+            });
+        })
+
+    </script>
+</body>
+</html>
