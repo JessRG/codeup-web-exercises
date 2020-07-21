@@ -18,7 +18,7 @@
         $(document).ready(function() {
             $("#titleContainer").children("h1").css({
                 width: "fit-content",
-                margin: "5em auto"
+                margin: "3em auto 1em"
             });
 
             // Contra (Nintendo Entertainment System)
@@ -32,19 +32,17 @@
                 height: 224
             };
 
-            // Contra Hard Corps (Sega Genesis)
-            const contraHcCode = [ "ArrowUp", "ArrowUp", "ArrowDown", "ArrowDown", "KeyA",
-                "ArrowUp", "ArrowUp", "ArrowDown", "ArrowDown", "KeyB",
-                "ArrowUp", "ArrowUp", "ArrowDown", "ArrowDown", "KeyC"
-            ];
-            const contraHcObj = {
-                pic: "url(./img/contraHardCorps.png)",
-                music: "./audio/contraHardCorps.mp3",
-                width: 320,
-                height: 224
-            };
-
-            // Mortal Kombat (Sega Genesis)
+            // // Contra Hard Corps (Sega Genesis)
+            // const contraHcCode = [ "ArrowUp", "ArrowUp", "ArrowDown", "ArrowDown", "KeyA",
+            //     "ArrowUp", "ArrowUp", "ArrowDown", "ArrowDown", "KeyB",
+            //     "ArrowUp", "ArrowUp", "ArrowDown", "ArrowDown", "KeyC"
+            // ];
+            // const contraHcObj = {
+            //     pic: "url(./img/contraHardCorps.png)",
+            //     music: "./audio/contraHardCorps.mp3",
+            //     width: 320,
+            //     height: 224
+            // };
 
             // Input array to store the users key entries
             let userInputCode = [];
@@ -52,9 +50,50 @@
             $(document).on("keydown", function(event) {
                 if (event.code !== "Space") {
                     console.log(event.code);
+                    displayButton(event)
                     userInputCode.push(event.code);
                 }
             });
+
+            $(document).on("keyup", function(event) {
+                if (event.code !== "Space") {
+                    $("#element").css({
+                        width: 0,
+                        height: 0
+                    });
+                }
+            });
+
+            const displayButton = function (e) {
+                const upBtn = "url(./img/shadedDark/shadedDark26.png)";
+                const downBtn = "url(./img/shadedDark/shadedDark27.png)";
+                const leftBtn = "url(./img/shadedDark/shadedDark24.png)";
+                const rightBtn = "url(./img/shadedDark/shadedDark25.png)";
+                const btnA = "url(./img/shadedDark/shadedDark36.png)";
+                const btnB = "url(./img/shadedDark/shadedDark37.png)";
+                if(e.code === "ArrowUp") {
+                    buildButton(upBtn);
+                } else if (e.code === "ArrowDown") {
+                    buildButton(downBtn);
+                } else if (e.code === "ArrowLeft") {
+                    buildButton(leftBtn);
+                } else if (e.code === "ArrowRight") {
+                    buildButton(rightBtn);
+                } else if (e.code === "KeyA") {
+                    buildButton(btnA);
+                } else if (e.code === "KeyB") {
+                    buildButton(btnB);
+                }
+            }
+
+            const buildButton = function (btn) {
+                $("#element").css({
+                    backgroundImage: btn,
+                    width: 80,
+                    height: 80,
+                    margin: "1em auto"
+                });
+            }
 
             // function to check if the user's code entry sequence matches the game's actual code sequence
             const checkInput = function (userCode, codeSeq) {
@@ -69,7 +108,7 @@
                     backgroundImage: specs.pic,
                     width: specs.width,
                     height: specs.height,
-                    margin: "5em auto"
+                    margin: "3em auto"
                 });
 
                 // Activate Cheats
@@ -79,7 +118,7 @@
                 $("h1").html("Cheater Detected!!! 🤟 👍 😎");
                 $("#titleContainer").append("<h3 class='resetPage'>Click Here to reset</h3>").children(".resetPage").css({
                     width: "fit-content",
-                    margin: "5em auto"
+                    margin: "1em auto"
                 });
             }
 
