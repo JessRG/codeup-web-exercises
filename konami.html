@@ -3,6 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <title>Cheat Codes Code</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
+        * {
+            font-family: 'Press Start 2P', cursive;
+        }
+    </style>
 </head>
 <body>
     <div id="titleContainer">
@@ -30,7 +37,7 @@
             const btnA = "./img/shadedDark/shadedDark36.png";
             const btnB = "./img/shadedDark/shadedDark37.png";
 
-            // Contra (Nintendo Entertainment System)
+            // Contra (Nintendo Entertainment System (NES))
             const contraCode = [ "ArrowUp", "ArrowUp", "ArrowDown", "ArrowDown", "ArrowLeft",
                 "ArrowRight", "ArrowLeft", "ArrowRight", "KeyA", "KeyB", "Enter"
             ];
@@ -41,7 +48,7 @@
                 height: 224
             };
 
-            // // Contra Hard Corps (Sega Genesis)
+            // // Another Game
             // const contraHcCode = [ "ArrowUp", "ArrowUp", "ArrowDown", "ArrowDown", "KeyA",
             //     "ArrowUp", "ArrowUp", "ArrowDown", "ArrowDown", "KeyB",
             //     "ArrowUp", "ArrowUp", "ArrowDown", "ArrowDown", "KeyC"
@@ -76,10 +83,10 @@
             // Display button options
             $("#btnDisplay").css({
                 content:"inline-block",
-                width: "500px",
+                width: "600px",
                 height: "100px"
             }).append(`<img src=${upBtn}> <img src=${downBtn}> <img src=${leftBtn}>`
-                +`<img src=${rightBtn}> <img src=${btnA}> <img src=${btnB}>`);
+                +` <img src=${rightBtn}> <img src=${btnA}> <img src=${btnB}>`);
 
             const displayButton = function (e) {
                 if(e.code === "ArrowUp") {

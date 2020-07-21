@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>jQuery FAQs</title>
+    <style>
+        .invisible {
+            visibility: hidden;
+        }
+
+        .highlighted {
+            background-color: #ef0;
+        }
+    </style>
+</head>
+<body>
+
+    <script src="js/jquery.js"></script>
+    <script>
+        $(document).ready( function () {
+            console.log("Ready");
+
+            // Build dl using jQuery
+            $("body").html("<dl>\n" +
+                "        <div>\n" +
+                "            <dt>Where do I Make Reservations to Stay in Yellowstone?</dt>\n" +
+                "            <dd>Yellowstone National Park Lodges operates the nine lodges in the park. All are open from late spring through fall, but only two are open in the winter: Old Faithful Snow Lodge and Mammoth Hot Springs Hotel. Be sure to make a reservation early!</dd>\n" +
+                "        </div>\n" +
+                "        <div>\n" +
+                "            <dt>Where can I see Animals?</dt>\n" +
+                "            <dd>Check at visitor centers for information about recent sightings.</dd>\n" +
+                "        </div>\n" +
+                "        <div>\n" +
+                "            <dt>How did Yellowstone get its name?</dt>\n" +
+                "            <dd>Yellowstone National Park is named after the Yellowstone River, the major river running through the park. According to French-Canadian trappers in the 1800s, they asked the name of the river from the Minnetaree tribe, who live in what is now eastern Montana. They responded “Mi tse a-da-zi,” which literally translates as “Rock Yellow River.” The trappers translated this into French as “Roche Jaune” or “Pierre Jaune.” In 1797, explorer-geographer David Thompson used the English translation—“Yellow Stone.” Lewis and Clark called the Yellowstone River by the French and English forms. Subsequent use formalized the name as “Yellowstone.</dd>\n" +
+                "        </div>\n" +
+                "        <div>\n" +
+                "            <dt>Is Yellowstone the largest national park?</dt>\n" +
+                "            <dd>No. More than half of Alaska’s national park units are larger, including Wrangell–St. Elias National Park and Preserve, which is the largest unit (13 million acres) in the National Park System. Until 1994, Yellowstone (at 2.2 million acres) was the largest national park in the contiguous United States. That year Death Valley National Monument was expanded and became a national park—it has more than 3 million acres.</dd>\n" +
+                "        </div>\n" +
+                "        <div>\n" +
+                "            <dt>Is Yellowstone the most visited national park?</dt>\n" +
+                "            <dd>Yellowstone is in the top five national parks for number of recreational visitors. Great Smoky Mountains National Park often has the most. Visit https://irma.nps.gov/Stats/ to view up-to-date statistics for all national parks.</dd>\n" +
+                "        </div>\n" +
+                "        <div>\n" +
+                "            <dt>What is the difference between a national park and a national forest?</dt>\n" +
+                "            <dd>National parks are administered by the Department of the Interior and national forests by the Department of Agriculture. The National Park Service is mandated to preserve resources unimpaired, while the Forest Service is mandated to wisely manage resources for many sustainable uses. Six national forests surround Yellowstone National Park.</dd>\n" +
+                "        </div>\n" +
+                "        <div>\n" +
+                "            <dt>How many rangers work in Yellowstone?</dt>\n" +
+                "            <dd>Approximately 738 people work for the National Park Service during the peak summer season. Approximately 386 are permanent, year-round employees. Park rangers work in education, resource management, law enforcement, emergency medical services, and backcountry operations. Other employees specialize in research, maintenance, management, administration, trail maintenance, fire management, and fee collection.</dd>\n" +
+                "        </div>\n" +
+                "        <div>\n" +
+                "            <dt>How do you become a park ranger?</dt>\n" +
+                "            <dd>Many National Park Service employees begin their careers as volunteers or as seasonal employees. Hiring is very competitive and is conducted through the Office of Personnel Management. Learn more about working with us.</dd>\n" +
+                "        </div>\n" +
+                "        <div>\n" +
+                "            <dt>Can we swim in rivers and lakes?</dt>\n" +
+                "            <dd>Swimming is not recommended because most lakes and streams are dangerously cold. Firehole Canyon, near Madison Junction, has a swimming area popular in summer. Soaking in thermal features is illegal. The area known as the Boiling River, north of Mammoth Hot Springs, allows soaking in the Gardner River near thermal outflow, but not in the feature itself. Soaking is allowed during daylight hours only and at your own risk.</dd>\n" +
+                "        </div>\n" +
+                "        <div>\n" +
+                "            <dt>What is the highest peak in the park?</dt>\n" +
+                "            <dd>Eagle Peak in the southeastern part of Yellowstone is the highest at 11,358 feet.</dd>\n" +
+                "        </div>\n" +
+                "    </dl>");
+
+            // Set all dd elements on the page to have a class named invisible
+            $("dd").addClass("invisible");
+
+            // Add a link to toggle class invisible
+            $("dl").prepend("<a href=''>Toggle Invisible dds</a>");
+
+            $("a").on("click", function (e) {
+                e.preventDefault();
+                $("dd").toggleClass("invisible");
+            });
+
+            $("dt").on("click", function () {
+                $(this).hasClass("highlighted")
+                    ? $(this).removeClass("highlighted")
+                    : $(this).addClass("highlighted");
+            })
+        });
+
+    </script>
+</body>
+</html>

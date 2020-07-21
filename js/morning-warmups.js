@@ -274,5 +274,17 @@ function revStringArray(strArr) {
     return strArr.sort().reverse();
 }
 
-console.log(revStringArray([0]));
-console.log(revStringArray([ "Prim", "Imar", "Rima", "Mary"]));
+// console.log(revStringArray([0]));
+// console.log(revStringArray([ "Prim", "Imar", "Rima", "Mary"]));
+
+// Write a JavaScript function that takes in two arguments, and returns whether the first argument
+// is evenly divisible by the second argument, or not.
+// Non-number arguments should have the function return null.
+function isDivisible(num, denom) {
+    if (isNaN(num) || isNaN(denom)) {
+        return null;
+    }
+    return parseFloat(num) % parseFloat(denom) === 0;
+}
+
+console.log(isDivisible(21, 7));
