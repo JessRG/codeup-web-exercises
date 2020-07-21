@@ -7,6 +7,7 @@
 <body>
     <div id="titleContainer">
         <h1>Cheat Code Entry (Press SpaceBar after entering code sequence)</h1>
+        <div id="btnDisplay"></div>
     </div>
 
     <div id="element"></div>
@@ -16,10 +17,18 @@
         "use strict";
 
         $(document).ready(function() {
-            $("#titleContainer").children("h1").css({
+            $("#titleContainer").children("h1, #btnDisplay").css({
                 width: "fit-content",
                 margin: "3em auto 1em"
             });
+
+            // Button variables to store the paths to each button icon I use
+            const upBtn = "./img/shadedDark/shadedDark26.png";
+            const downBtn = "./img/shadedDark/shadedDark27.png";
+            const leftBtn = "./img/shadedDark/shadedDark24.png";
+            const rightBtn = "./img/shadedDark/shadedDark25.png";
+            const btnA = "./img/shadedDark/shadedDark36.png";
+            const btnB = "./img/shadedDark/shadedDark37.png";
 
             // Contra (Nintendo Entertainment System)
             const contraCode = [ "ArrowUp", "ArrowUp", "ArrowDown", "ArrowDown", "ArrowLeft",
@@ -64,13 +73,15 @@
                 }
             });
 
+            // Display button options
+            $("#btnDisplay").css({
+                content:"inline-block",
+                width: "500px",
+                height: "100px"
+            }).append(`<img src=${upBtn}> <img src=${downBtn}> <img src=${leftBtn}>`
+                +`<img src=${rightBtn}> <img src=${btnA}> <img src=${btnB}>`);
+
             const displayButton = function (e) {
-                const upBtn = "url(./img/shadedDark/shadedDark26.png)";
-                const downBtn = "url(./img/shadedDark/shadedDark27.png)";
-                const leftBtn = "url(./img/shadedDark/shadedDark24.png)";
-                const rightBtn = "url(./img/shadedDark/shadedDark25.png)";
-                const btnA = "url(./img/shadedDark/shadedDark36.png)";
-                const btnB = "url(./img/shadedDark/shadedDark37.png)";
                 if(e.code === "ArrowUp") {
                     buildButton(upBtn);
                 } else if (e.code === "ArrowDown") {
@@ -88,7 +99,7 @@
 
             const buildButton = function (btn) {
                 $("#element").css({
-                    backgroundImage: btn,
+                    backgroundImage: `url(${btn})`,
                     width: 80,
                     height: 80,
                     margin: "1em auto"
