@@ -311,4 +311,4 @@ function numOfWords(str) {
     }
     return null;
 }
-console.log(numOfWords("Hakeem Olajuwon is a good good basketball player."));
+console.log(numOfWords("Hakeem Olajuwon is a good good basketball player."))
