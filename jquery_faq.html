@@ -8,80 +8,162 @@
             visibility: hidden;
         }
 
-        .highlighted {
+        .highlight {
             background-color: #ef0;
+        }
+
+        .boldText {
+            font-weight: bold;
+        }
+
+        .textColor {
+            color: blue;
         }
     </style>
 </head>
 <body>
 
-    <script src="js/jquery.js"></script>
-    <script>
-        $(document).ready( function () {
-            console.log("Ready");
+<dl>
+    <div>
+        <dt>How do I obtain a park entrance pass?</dt>
+        <dd>Fewer than one-third of the national parks charge entrance fees. You can obtain park entrance passes by
+            visiting a park site that charges an entrance fee. Entrance fee sites have passes available; we recommend
+            calling a park prior to your visit. (See the park search to locate a specific park.) There are a number of
+            entrance passes available, including park-specific passes as well as passes that offer entrance to more than
+            2,000 federal recreation sites in addition to the national parks (Annual, Military, Senior, 4th Grade,
+            Access, and Volunteer passes). Learn more about the America the Beautiful - The National Parks and Federal
+            Recreational Lands Pass.
+        </dd>
+    </div>
+    <div>
+        <dt>Where can I find a park map?</dt>
+        <dd>You can view maps on specific park websites or find national park, National Park System, National Trails
+            System, and other maps.
+        </dd>
+    </div>
+    <div>
+        <dt>How do I make reservations for camping/lodging in national parks?</dt>
+        <dd>For campground reservations, visit Recreation.gov. Not all parks participate in this service; many
+            campgrounds are first come, first served. For more information on specific camping and lodging services
+            offered at the park(s) of your interest, please check specific park websites. You can also learn more about
+            camping in national parks and find a map of parks with camping opportunities.
+        </dd>
+    </div>
+    <div>
+        <dt>How do I reserve a tour in a park?</dt>
+        <dd>You can book some park tours through Recreation.gov such as Pearl Harbor National Memorial, many Mammoth
+            Cave National Park cave tours, Independence National Historical Park tours, and more. Not all parks
+            participate in this reservation service. For more information on tours offered at a specific park, please
+            see the park search.
+        </dd>
+    </div>
+    <div>
+        <dt>Can I bring my pet to a national park?
+        </dt>
+        <dd>Some national parks welcome pets—in developed areas, on many trails and campgrounds, and in some lodging
+            facilities. Learn more about pets in parks.
+        </dd>
+    </div>
+    <div>
+        <dt>Can I bring my service dog to a national park?</dt>
+        <dd>Yes, service dogs are legally permitted anywhere in a park that visitors can go. Learn more about service
+            animals in national parks, including the difference between service animals and emotional support animals.
+        </dd>
+    </div>
+    <div>
+        <dt>What do I need to know about driving off road in national parks?</dt>
+        <dd>Before you head out, check with the national parks that you intend to visit. In many national parks,
+            off-road driving is illegal. Where off-road driving is allowed, the National Park Service regulates it.
+        </dd>
+    </div>
+    <div>
+        <dt>How do I apply for a job with the National Park Service?</dt>
+        <dd>National Park Service jobs, including both permanent and seasonal positions, are listed on USAJOBs. Learn
+            more about working for us, including opportunities for students and volunteers and tips for applying for
+            jobs.
+        </dd>
+    </div>
+    <div>
+        <dt>What are concessions?</dt>
+        <dd>Concessioners provide park visitors with lodging, transportation, food services, shops, guiding, and other
+            services. More than 480 NPS concession contracts in more than 100 different park units vary in size from
+            small, family-owned businesses to national/international corporations. Learn more about commercial services
+            in the National Park Service.
+        </dd>
+    </div>
+    <div>
+        <dt>How do I find out about contracting opportunities?</dt>
+        <dd>Opportunities to contract with the National Park Service are posted to FedBizOpps.gov, the federal
+            government’s electronic business portal.
+        </dd>
+    </div>
+</dl>
 
-            // Build dl using jQuery
-            $("body").html("<dl>\n" +
-                "        <div>\n" +
-                "            <dt>Where do I Make Reservations to Stay in Yellowstone?</dt>\n" +
-                "            <dd>Yellowstone National Park Lodges operates the nine lodges in the park. All are open from late spring through fall, but only two are open in the winter: Old Faithful Snow Lodge and Mammoth Hot Springs Hotel. Be sure to make a reservation early!</dd>\n" +
-                "        </div>\n" +
-                "        <div>\n" +
-                "            <dt>Where can I see Animals?</dt>\n" +
-                "            <dd>Check at visitor centers for information about recent sightings.</dd>\n" +
-                "        </div>\n" +
-                "        <div>\n" +
-                "            <dt>How did Yellowstone get its name?</dt>\n" +
-                "            <dd>Yellowstone National Park is named after the Yellowstone River, the major river running through the park. According to French-Canadian trappers in the 1800s, they asked the name of the river from the Minnetaree tribe, who live in what is now eastern Montana. They responded “Mi tse a-da-zi,” which literally translates as “Rock Yellow River.” The trappers translated this into French as “Roche Jaune” or “Pierre Jaune.” In 1797, explorer-geographer David Thompson used the English translation—“Yellow Stone.” Lewis and Clark called the Yellowstone River by the French and English forms. Subsequent use formalized the name as “Yellowstone.</dd>\n" +
-                "        </div>\n" +
-                "        <div>\n" +
-                "            <dt>Is Yellowstone the largest national park?</dt>\n" +
-                "            <dd>No. More than half of Alaska’s national park units are larger, including Wrangell–St. Elias National Park and Preserve, which is the largest unit (13 million acres) in the National Park System. Until 1994, Yellowstone (at 2.2 million acres) was the largest national park in the contiguous United States. That year Death Valley National Monument was expanded and became a national park—it has more than 3 million acres.</dd>\n" +
-                "        </div>\n" +
-                "        <div>\n" +
-                "            <dt>Is Yellowstone the most visited national park?</dt>\n" +
-                "            <dd>Yellowstone is in the top five national parks for number of recreational visitors. Great Smoky Mountains National Park often has the most. Visit https://irma.nps.gov/Stats/ to view up-to-date statistics for all national parks.</dd>\n" +
-                "        </div>\n" +
-                "        <div>\n" +
-                "            <dt>What is the difference between a national park and a national forest?</dt>\n" +
-                "            <dd>National parks are administered by the Department of the Interior and national forests by the Department of Agriculture. The National Park Service is mandated to preserve resources unimpaired, while the Forest Service is mandated to wisely manage resources for many sustainable uses. Six national forests surround Yellowstone National Park.</dd>\n" +
-                "        </div>\n" +
-                "        <div>\n" +
-                "            <dt>How many rangers work in Yellowstone?</dt>\n" +
-                "            <dd>Approximately 738 people work for the National Park Service during the peak summer season. Approximately 386 are permanent, year-round employees. Park rangers work in education, resource management, law enforcement, emergency medical services, and backcountry operations. Other employees specialize in research, maintenance, management, administration, trail maintenance, fire management, and fee collection.</dd>\n" +
-                "        </div>\n" +
-                "        <div>\n" +
-                "            <dt>How do you become a park ranger?</dt>\n" +
-                "            <dd>Many National Park Service employees begin their careers as volunteers or as seasonal employees. Hiring is very competitive and is conducted through the Office of Personnel Management. Learn more about working with us.</dd>\n" +
-                "        </div>\n" +
-                "        <div>\n" +
-                "            <dt>Can we swim in rivers and lakes?</dt>\n" +
-                "            <dd>Swimming is not recommended because most lakes and streams are dangerously cold. Firehole Canyon, near Madison Junction, has a swimming area popular in summer. Soaking in thermal features is illegal. The area known as the Boiling River, north of Mammoth Hot Springs, allows soaking in the Gardner River near thermal outflow, but not in the feature itself. Soaking is allowed during daylight hours only and at your own risk.</dd>\n" +
-                "        </div>\n" +
-                "        <div>\n" +
-                "            <dt>What is the highest peak in the park?</dt>\n" +
-                "            <dd>Eagle Peak in the southeastern part of Yellowstone is the highest at 11,358 feet.</dd>\n" +
-                "        </div>\n" +
-                "    </dl>");
+<h3>Everglades</h3>
+<ul>
+    <li>Something about Everglades 1</li>
+    <li>Something about Everglades 2</li>
+    <li>Something about Everglades 3</li>
+    <li>Something about Everglades 4</li>
+</ul>
+<h3>Arches</h3>
+<ul>
+    <li>Something about Arches 1</li>
+    <li>Something about Arches 2</li>
+    <li>Something about Arches 3</li>
+    <li>Something about Arches 4</li>
+</ul>
+<h3>Denali</h3>
+<ul>
+    <li>Something about Denali 1</li>
+    <li>Something about Denali 2</li>
+    <li>Something about Denali 3</li>
+    <li>Something about Denali 4</li>
+</ul>
 
-            // Set all dd elements on the page to have a class named invisible
-            $("dd").addClass("invisible");
+<script src="js/jquery.js"></script>
+<script>
+    $(document).ready(function () {
+        console.log("Ready");
 
-            // Add a link to toggle class invisible
-            $("dl").prepend("<a href=''>Toggle Invisible dds</a>");
+        // Set all dd elements on the page to have a class named invisible
+        $("dd").addClass("invisible");
 
-            $("a").on("click", function (e) {
-                e.preventDefault();
-                $("dd").toggleClass("invisible");
-            });
+        // Add a link to toggle class invisible
+        $("dl").prepend("<a href=''>Toggle Invisible dds</a>");
 
-            $("dt").on("click", function () {
-                $(this).hasClass("highlighted")
-                    ? $(this).removeClass("highlighted")
-                    : $(this).addClass("highlighted");
-            })
+        // Toggle dd tags visibility when anchor is clicked on
+        $("a").on("click", function (e) {
+            e.preventDefault();
+            $("dd").toggleClass("invisible");
         });
 
-    </script>
+        // Toggle highlight on question "dt"
+        $("dt").on("click", function () {
+            $(this).toggleClass("highlight");
+        });
+
+        // Append a button into the body of the html (at the bottom of the page)
+        $("body").append("<button class='highlight-last'>Click me to highlight last list item</button>");
+
+        // Toggle highlight of last li element when button is clicked on
+        $(".highlight-last").on("click", function () {
+            $("ul").each(function() {
+                $(this).children().last().toggleClass("highlight");
+            });
+        });
+
+        // Toggle bold text on li elements when title (h3) is clicked on
+        $("h3").on("click", function () {
+            $(this).next().children().toggleClass("boldText");
+        });
+
+        // Toggle text color of first li to blue when any li is click on
+        $("li").on("click", function () {
+            $(this).parent().children().first().toggleClass("textColor");
+        });
+    });
+
+</script>
 </body>
 </html>

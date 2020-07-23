@@ -287,4 +287,18 @@ function isDivisible(num, denom) {
     return parseFloat(num) % parseFloat(denom) === 0;
 }
 
-console.log(isDivisible(21, 7));
+// console.log(isDivisible(21, 7));
+
+// Write a JavaScript function that takes in a length in inches (a number),
+// and converts it to a string listing the length in feet and inches. (Example: 78 => 6’6”).
+// Non-number arguments should have the function return null.
+function convertInches(num) {
+    if (isNaN(num)) {
+        return null;
+    } else {
+        const ft = Math.floor(num / 12);
+        const inches = num % 12;
+        return [ ft, "\'", inches, "\"" ].join("");
+    }
+}
+// console.log(convertInches(73));
