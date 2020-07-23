@@ -302,3 +302,13 @@ function convertInches(num) {
     }
 }
 // console.log(convertInches(73));
+
+// Write a function that takes in a string and returns the number of words in the string.
+// Non-string inputs should return null.
+function numOfWords(str) {
+    if (typeof str === "string") {
+        return str.split(" ").length;
+    }
+    return null;
+}
+console.log(numOfWords("Hakeem Olajuwon is a good good basketball player."));
