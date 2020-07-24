@@ -25,6 +25,7 @@
     </div>
 </div>
 
+<!-- jQuery Script -->
 <script src="https://code.jquery.com/jquery-2.2.4.min.js"
         integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
 <script>
@@ -57,14 +58,14 @@
         //             its contents and fields
         //       HINT: You will want to target #insertProducts for your new HTML elements
 
-        const loadData = function () {
+        const loadJSON = function () {
             $.ajax({
                 url: "data/inventory.json",
                 type: "GET"
             }).done(success);
         }
         // initial load of the data/inventory.json content
-        loadData();
+        loadJSON();
 
         // Adding a refresh button to page that will load inventory.json w/o refreshing entire page
         const container = $(".container");
@@ -78,7 +79,7 @@
             productsBody.children().remove();
 
             // re-render the content from data/inventory.json onto page
-            loadData();
+            location.reload();
         })
     })();
 </script>

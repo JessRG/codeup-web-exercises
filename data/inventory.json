@@ -37,5 +37,19 @@
             "tool"
         ],
         "price": 50
-    }
+    }, {
+    "title": "Sledgehammer",
+    "quantity": 10,
+    "categories": [
+        "tool"
+    ],
+    "price": 50
+}, {
+    "title": "Sledgehammer",
+    "quantity": 10,
+    "categories": [
+        "tool"
+    ],
+    "price": 50
+}
 ]
