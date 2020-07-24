@@ -38,18 +38,12 @@
         ],
         "price": 50
     }, {
-    "title": "Sledgehammer",
-    "quantity": 10,
-    "categories": [
-        "tool"
-    ],
-    "price": 50
-}, {
-    "title": "Sledgehammer",
-    "quantity": 10,
-    "categories": [
-        "tool"
-    ],
-    "price": 50
-}
+        "title": "Jackhammer",
+        "quantity": 5,
+        "categories": [
+            "tool",
+            "powered"
+        ],
+        "price": 1000
+    }
 ]

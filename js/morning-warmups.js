@@ -311,4 +311,27 @@ function numOfWords(str) {
     }
     return null;
 }
-console.log(numOfWords("Hakeem Olajuwon is a good good basketball player."))
+// console.log(numOfWords("Hakeem Olajuwon is a good good basketball player."));
+
+// Write a function that returns “fizz”, “buzz”, or “fizzbuzz” based on the conditions of the famous FizzBuzz exercise.
+// Any number that doesn’t match these conditions should return the number passed.
+// Any non-number passed should have the function return null.
+function fizzOrBuzz(num) {
+    if (typeof num !== "number") {
+        return null;
+    } else if (num % 3 === 0 && num % 5 === 0) {
+        return "FizzBuzz";
+    } else if (num % 3 === 0) {
+        return "Fizz";
+    } else if (num % 5 === 0) {
+        return "Buzz";
+    } else {
+        return num;
+    }
+}
+
+console.log(fizzOrBuzz(6));
+console.log(fizzOrBuzz(55));
+console.log(fizzOrBuzz(45));
+console.log(fizzOrBuzz(17));
+console.log(fizzOrBuzz(null));

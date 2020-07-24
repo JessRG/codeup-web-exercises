@@ -9,7 +9,9 @@
     <link rel="stylesheet" href="css/ajax-blog.css">
 </head>
 <body>
+
 <div class="container">
+    <!-- Header Section -->
     <header class="blog-header py-3">
         <div class="row flex-nowrap justify-content-between align-items-center">
             <div class="col-4 pt-1"><a class=text-muted">Subscribe</a></div>
@@ -23,9 +25,9 @@
         </div>
     </header>
 
+    <!-- Posts Section -->
     <div class="container-fluid">
-
-        <div id="posts"></div>
+        <div id="posts" class="row"></div>
     </div>
 </div>
 
@@ -40,25 +42,26 @@
         const posts = $("#posts");
 
         // define success function to handle a successful ajax call
-        const success = function (response) {
+        const success = function(response) {
             // forEach to traverse through each post
-            response.forEach(function (post) {
+            response.forEach(function(post) {
                 posts.append(buildPost(post));
             });
         }
 
         // define a buildPost function to handle building each post
-        const buildPost = function (post) {
-            return "<div class='m-4'>" +
-                `<div class='card-header'>${post.title}</div>` +
+        const buildPost = function(post) {
+            return "<div class='col-6'>" +
+                `<div class='m-2 p-2'><div class='card-header'>${post.title}</div>` +
+                "<div class='row no-gutters border-rounded overflow-auto h-200 card-body'>" +
                 `<div>${post.date}</div>` +
                 `<div>${post.categories.join(" | ")}</div>` +
                 `<div class='card-text'>${post.content}</div>` +
-                "</div><hr>"
+                "</div></div></div><hr>"
         }
 
         // loadJSON function to load the data from the blog.json file
-        const loadJSON = function () {
+        const loadJSON = function() {
             $.ajax({
                 url: "data/blog.json",
                 type: "GET"
@@ -72,9 +75,9 @@
 </script>
 
 <!-- Bootstrap jQuery scripts -->
-<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
-        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
-        crossorigin="anonymous"></script>
+<!--<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"-->
+<!--        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"-->
+<!--        crossorigin="anonymous"></script>-->
 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
         integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
         crossorigin="anonymous"></script>
