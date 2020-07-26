@@ -5,85 +5,89 @@
     <title>Weather Map</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
           integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
-    <link href='https://api.mapbox.com/mapbox-gl-js/v1.11.1/mapbox-gl.css' rel='stylesheet' />
+    <link href='https://api.mapbox.com/mapbox-gl-js/v1.11.1/mapbox-gl.css' rel='stylesheet'/>
 </head>
 <body>
-<div class="container">
-    <!-- Header Section -->
-    <div class="d-flex">
-        <h1>Open Weather</h1>
-    </div>
-    <!-- Header Section End -->
-
+<!-- Container -->
+<div class="container-fluid">
     <!-- Body Section -->
-    <div class="row no-gutters">
+    <div class="row">
+        <!-- Header Section -->
+        <div class="col-12">
+            <h1>Open Weather</h1>
+        </div>
+        <!-- Header Section End -->
+
         <!-- Cards -->
-        <div class="col-12 text-center d-flex justify-content-center mb-5">
+        <div class="col-12 d-flex justify-content-between mb-5">
             <!-- Card 0 -->
-            <div id="card-0" class="card m-2" style="width: 18rem;">
+            <div id="card-0" class="card">
                 <div id="weather-date-0" class="card-header">
                     Featured
                 </div>
                 <ul class="list-group list-group-flush">
                     <li id="high-low-temp-0" class="list-group-item"></li>
-                    <li id="feels-like-0" class="list-group-item"></li>
+                    <li id="description-0" class="list-group-item"></li>
                     <li id="humidity-0" class="list-group-item"></li>
+                    <li id="wind-0" class="list-group-item"></li>
                     <li id="pressure-0" class="list-group-item"></li>
                 </ul>
             </div>
             <!-- Card 0 End -->
             <!-- Card 1 -->
-            <div id="card-1" class="card m-2" style="width: 18rem;">
+            <div id="card-1" class="card">
                 <div id="weather-date-1" class="card-header">
                     Featured
                 </div>
-                <!--                <div id="weather-icon-1" class=""></div>-->
                 <ul class="list-group list-group-flush">
                     <li id="high-low-temp-1" class="list-group-item"></li>
-                    <li id="feels-like-1" class="list-group-item"></li>
+                    <li id="description-1" class="list-group-item"></li>
                     <li id="humidity-1" class="list-group-item"></li>
+                    <li id="wind-1" class="list-group-item"></li>
                     <li id="pressure-1" class="list-group-item"></li>
                 </ul>
             </div>
             <!-- Card 1 End -->
             <!-- Card 2 -->
-            <div id="card-2" class="card m-2" style="width: 18rem;">
+            <div id="card-2" class="card">
                 <div id="weather-date-2" class="card-header">
                     Featured
                 </div>
-                <!--                <div id="weather-icon-2" class=""></div>-->
                 <ul class="list-group list-group-flush">
                     <li id="high-low-temp-2" class="list-group-item"></li>
-                    <li id="feels-like-2" class="list-group-item"></li>
+                    <li id="description-2" class="list-group-item"></li>
                     <li id="humidity-2" class="list-group-item"></li>
+                    <li id="wind-2" class="list-group-item"></li>
                     <li id="pressure-2" class="list-group-item"></li>
                 </ul>
             </div>
             <!-- Card 2 End -->
             <!-- Card 3 -->
-            <div id="card-3" class="card m-2" style="width: 18rem;">
+            <div id="card-3" class="card">
                 <div id="weather-date-3" class="card-header">
                     Featured
                 </div>
                 <div id="weather-icon-3" class=""></div>
                 <ul class="list-group list-group-flush">
                     <li id="high-low-temp-3" class="list-group-item"></li>
-                    <li id="feels-like-3" class="list-group-item"></li>
+                    <li id="description-3" class="list-group-item"></li>
                     <li id="humidity-3" class="list-group-item"></li>
+                    <li id="wind-3" class="list-group-item"></li>
                     <li id="pressure-3" class="list-group-item"></li>
                 </ul>
             </div>
             <!-- Card 3 End -->
             <!-- Card 4 -->
-            <div id="card-4" class="card m-2" style="width: 18rem;">
+            <div id="card-4" class="card">
                 <div id="weather-date-4" class="card-header">
                     Featured
                 </div>
-                <div id="weather-icon-4" class=""></div>
+                <div id="weather-icon-4"></div>
                 <ul class="list-group list-group-flush">
                     <li id="high-low-temp-4" class="list-group-item"></li>
-                    <li id="feels-like-4" class="list-group-item"></li>
+                    <li id="description-4" class="list-group-item"></li>
                     <li id="humidity-4" class="list-group-item"></li>
+                    <li id="wind-4" class="list-group-item"></li>
                     <li id="pressure-4" class="list-group-item"></li>
                 </ul>
             </div>
@@ -92,14 +96,18 @@
         <!-- Cards End -->
 
         <div class="col-12">
-            <!-- MapBox Section -->
-            <div id="mapBox" class="w-100 jumbotron jumbotron-fluid"></div>
-            <!-- MapBox Section End -->
+            <div class="jumbotron jumbotron-fluid py-3">
+                <div class="container-fluid">
+                    <!-- MapBox Section -->
+                    <div id="mapBox"></div>
+                    <!-- MapBox Section End -->
+                </div>
+            </div>
         </div>
     </div>
     <!-- Body Section End -->
 </div>
-
+<!-- Container End -->
 
 <!-- jQuery and Bootstrap Scripts -->
 <script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc="
