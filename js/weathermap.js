@@ -14,6 +14,7 @@ const buildForecastCards = function (response) {
          * Assigning card values:
          * Weather Date
          * Low/High Temperatures
+         * Icon
          * Description
          * Humidity
          * Wind speed
@@ -28,8 +29,8 @@ const buildForecastCards = function (response) {
         const humidity = response.daily[i].humidity;
         const pressure = response.daily[i].pressure;
 
-        // Define the content for the forecast weather card(s) by entering
-        // in the forecast information (block scope/local variables above) into the card(s)
+        // Define the HTML content for the forecast weather card(s) by entering
+        // in the forecast information (block scoped/local variables above) into the card(s)
         $(`${cardId}`).css({
             width: "25rem"
         });
@@ -50,12 +51,12 @@ const buildForecastCards = function (response) {
         $(`${cardId} #wind-${i}`)
             .html(`Wind: <strong>${windSpeed}</strong>`);
         $(`${cardId} #pressure-${i}`)
-            .html(`Pressure: <strong>${pressure}</strong>`);
+            .html(`Pressure: <strong>${pressure} hPa</strong>`);
     }
 }
 
 // Defined a forecast function to query the openWeatherMap api
-const forecastWeather = function(latitude, longitude) {
+const forecastWeather = function (latitude, longitude) {
     $.get(`https://api.openweathermap.org/data/2.5/onecall`, {
         APPID: OPEN_WEATHER_APPID,
         lat: latitude,
@@ -66,7 +67,7 @@ const forecastWeather = function(latitude, longitude) {
 
 // Target MapBox DOM element and specify height attribute so map can be visible
 const mapBox = $('#mapBox').css({
-    height: "50em"
+    height: "47rem"
 });
 
 mapboxgl.accessToken = MAPBOX_KEY;
@@ -79,34 +80,61 @@ const map = new mapboxgl.Map({
 // disable map zoom when using scroll
 map.scrollZoom.disable();
 
-// Define function to create a marker
-const buildMarker = function (lon, lat) {
-    const marker = new mapboxgl.Marker()
-        .setLngLat([lon, lat])
+// Define a marker build function to return draggable marker
+const buildMarker = function () {
+    return new mapboxgl.Marker()
+        .setDraggable(true)
+        .setLngLat([-98.492, 29.419])
         .addTo(map);
 }
 
-// Define function to handle generating a marker on the MapBox
-const generateMarker = function(e) {
-    // handle marker creation on initial map load event
-    if(e.type === "load") {
-        forecastWeather(29.419, -98.492);
-        buildMarker(-98.492, 29.419);
+// Define a function to decode/convert city name into coordinates
+
+
+// Define function to handle setting the marker on the MapBox
+const setMarker = function (e) {
+    if(e.type === "dragend") {
+        const lngLat = e.target._lngLat;
+        forecastWeather(lngLat.lat, lngLat.lng);
     } else {
-        // handle marker creation for event(s) other than "load"
+        // handle resetting marker for event(s) other than "dragend" and updating the forecast weather cards
         e.preventDefault();
 
         // Store selected position's longitude and latitude info into block scope variables (local variables)
         const lon = e.lngLat.lng;
         const lat = e.lngLat.lat;
         forecastWeather(lat, lon);
-        buildMarker(lon, lat);
+        marker.setLngLat([lon, lat]);
+        marker.addTo(map);
     }
-    // console.log(e);
 }
 
-// Initial call to openWeatherMap api to get weather forecast of the city of San Antonio
-map.on("load", generateMarker);
+// Define function to handle setting the current city name at the top of the page
+const setCityName = function(city) {
+    $("#currentCity").html(city);
+}
 
-// Add event listener to MapBox to add a marker when clicked on
-map.on("dblclick", generateMarker);
+// Define function to handle setting the marker for the user's city name input
+const setCityMarker = function() {
+    const city = $("#find-place")[0].value;
+    console.log(city);
+
+    // Need to decode or convert the city name text into latitude, longitude coordinates
+
+    // Then call openWeatherMap api with the new coordinates and set the city label
+}
+
+// Declare marker object for the MapBox (set to mapbox initial center by default) then
+// set both forecast weather cards for initial center and city label to current city marked
+const marker = buildMarker();
+forecastWeather(marker.getLngLat().lat, marker.getLngLat().lng);
+setCityName("San Antonio");
+
+// Add event listener to MapBox to set a marker when double clicked
+map.on("dblclick", setMarker);
+
+// Add event listener to Marker to update weather forecast when marker drag has ended
+marker.on("dragend", setMarker);
+
+// Add event listener to "place" input entry button
+$("#submitCityBtn").on("click", setCityMarker);

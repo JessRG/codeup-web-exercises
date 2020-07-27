@@ -13,13 +13,33 @@
     <!-- Body Section -->
     <div class="row">
         <!-- Header Section -->
-        <div class="col-12">
-            <h1>Open Weather</h1>
+        <div class="col-12 d-flex">
+            <div class="mr-auto">
+                <h1>Open Weather</h1>
+            </div>
+            <div>
+                <label>Current City: <span id="currentCity"></span></label>
+            </div>
         </div>
         <!-- Header Section End -->
 
+        <!-- City Input Section -->
+        <div class="col-12 d-flex">
+            <label for="find-place">Place: </label>
+            <div class="col-2 mr-auto input-group">
+                <input id="find-place"
+                       class="form-control"
+                       type="text"
+                       placeholder="Some City Name">
+                <div class="input-group-append">
+                    <button id="submitCityBtn" data-target="find-place" class="btn btn-primary">Find</button>
+                </div>
+            </div>
+        </div>
+        <!-- City Input Section End -->
+
         <!-- Cards -->
-        <div class="col-12 d-flex justify-content-between mb-5">
+        <div class="col-12 d-flex justify-content-between my-5">
             <!-- Card 0 -->
             <div id="card-0" class="card">
                 <div id="weather-date-0" class="card-header">
