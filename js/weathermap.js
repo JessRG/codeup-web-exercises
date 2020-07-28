@@ -145,7 +145,7 @@
 
     // Define function to handle setting the marker for the user's city name input
     const setCityMarker = function (e) {
-        const city = $("#find-place")[0].value;
+        const city = $("#find-place").val();
         console.log(city);
 
         // Decode/Convert the city name text into latitude, longitude coordinates
