@@ -3,34 +3,36 @@
 <head>
     <meta charset="UTF-8">
     <title>Weather Map</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
-          integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+<!--    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"-->
+<!--          integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">-->
+    <link rel="stylesheet" href="https://bootswatch.com/4/darkly/bootstrap.min.css">
     <link href='https://api.mapbox.com/mapbox-gl-js/v1.11.1/mapbox-gl.css' rel='stylesheet'/>
 </head>
 <body>
 <!-- Container -->
 <div class="container-fluid">
     <!-- Body Section -->
-    <div class="row">
-        <!-- Header Section -->
-        <div class="col-12 d-flex">
-            <div class="mr-auto">
-                <h1>Open Weather</h1>
-            </div>
-            <div>
-                <label>Current City: <span id="currentCity"></span></label>
-            </div>
-        </div>
-        <!-- Header Section End -->
 
+    <!-- Header Section -->
+    <div class="d-flex bg-primary align-items-center px-3 mx-n3">
+        <div class="mr-auto">
+            <h1>Weather App</h1>
+        </div>
+        <div class="font-weight-bolder">
+            <label>Current City: <span id="currentCity"></span></label>
+        </div>
+    </div>
+    <!-- Header Section End -->
+
+    <div class="row mx-3">
         <!-- City Input Section -->
-        <div class="col-12 d-flex m-4">
-            <label for="find-place">Place: </label>
+        <div class="col-12 d-flex m-4 align-items-center mx-3">
+            <label for="find-place" class="font-weight-bold">Place </label>
             <div class="col-2 mr-auto input-group">
                 <input id="find-place"
                        class="form-control"
                        type="text"
-                       placeholder="Some City Name">
+                       placeholder="Meso Maya, Dallas ">
                 <div class="input-group-append">
                     <button id="submitCityBtn" class="btn btn-primary form-control">Find</button>
                 </div>
@@ -116,7 +118,7 @@
         <!-- Cards End -->
 
         <div class="col-12">
-            <div class="jumbotron jumbotron-fluid py-3">
+            <div class="jumbotron jumbotron-fluid py-3 img-thumbnail">
                 <div class="container-fluid">
                     <!-- MapBox Section -->
                     <div id="mapBox"></div>
