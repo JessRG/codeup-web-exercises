@@ -2,8 +2,7 @@
     // All of the code used to make AJAX requests to both OpenWeatherMap and Mapbox APIs
     "use strict"
     // Define build function for the 5 weather cards on the page
-    const buildForecastCards = function (response) {
-        // console.log(response);
+    const buildWeatherCards = function (response) {
 
         // loop through 5 days of weather forecast
         for (let i = 0; i < 5; i++) {
@@ -56,18 +55,18 @@
     }
 
     // Defined a forecast function to query the openWeatherMap API
-    const forecastWeather = function (latitude, longitude) {
+    const getWeatherForecast = function (latitude, longitude) {
         // Call/Query openWeatherMap API to obtain the response object with the expected weather forecast info
         $.get("https://api.openweathermap.org/data/2.5/onecall", {
             APPID: OPEN_WEATHER_APPID,
             lat: latitude,
             lon: longitude,
             units: "imperial"
-        }).done(buildForecastCards);
+        }).done(buildWeatherCards);
     }
 
     // Define a function to decode/convert city name into coordinates and vice versa (coordinates into city)
-    const geocode = function (searchInfo, type) {
+    const getGeoLocation = function (searchInfo, type) {
         // if searchInfo is an object (array) join longitude and latitude with a comma
         if (Array.isArray(searchInfo)) {
             searchInfo.join(",");
@@ -76,23 +75,24 @@
         // Call/Query MapBox API to obtain the response object with the necessary map information
         $.get(`https://api.mapbox.com/geocoding/v5/mapbox.places/${searchInfo}.json`, {
             access_token: MAPBOX_KEY,
-            types: "place"
+            types: [ "place", "address" ]
         }).done(function (response) {
-            // console.log(response);
             // Grab the center coordinates and city name from the Mapbox API response
             const lon = response.features[0].center[0];
             const lat = response.features[0].center[1];
-            const city = response.features[0].place_name;
+            let city = response.features[1].place_name;
             if (type !== "dragend") {
+                if(type === "click" || type === "load") {
+                    city = response.features[0].place_name;
+                }
                 marker.setLngLat([lon, lat]);
                 marker.addTo(map);
             }
-
-            forecastWeather(lat, lon);
+            getWeatherForecast(lat, lon);
             setCityName(city);
             map.flyTo({
                 center: [lon, lat],
-                zoom: 10,
+                zoom: 9,
                 essential: true
             });
         });
@@ -105,12 +105,12 @@
 
     mapboxgl.accessToken = MAPBOX_KEY;
     const map = new mapboxgl.Map({
-        container: `mapBox`,
-        style: 'mapbox://styles/mapbox/light-v10', // stylesheet location
+        container: "mapBox",
+        style: "mapbox://styles/mapbox/light-v10", // stylesheet location
         center: [-98.4951, 29.4246], // starting position [lng, lat]
-        zoom: 10 // starting zoom
+        zoom: 9 // starting zoom
     });
-    // disable map zoom when using scroll
+    // Disable map zoom when using scroll
     map.scrollZoom.disable();
 
     // Define a marker build function to return draggable marker
@@ -122,11 +122,12 @@
     // Define function to handle setting the marker on the MapBox
     const setMarker = function (e) {
         if (e.type === "load") {
-            geocode([-98.4951, 29.4246] , e.type);
+            //[-98.4951, 29.4246]
+            getGeoLocation("San Antonio" , e.type);
         } else if (e.type === "dragend") {
-            const lat = e.target._lngLat.lat;
-            const lon = e.target._lngLat.lng;
-            geocode([lon, lat], e.type);
+            const lat = marker.getLngLat().lat;
+            const lon = marker.getLngLat().lng;
+            getGeoLocation([lon, lat], e.type);
         } else {
             // handle resetting marker for event(s) other than "dragend" and updating the forecast weather cards
             e.preventDefault();
@@ -134,7 +135,7 @@
             // Store selected position's longitude and latitude info into block scope variables (local variables)
             const lon = e.lngLat.lng;
             const lat = e.lngLat.lat;
-            geocode([lon, lat], e.type);
+            getGeoLocation([lon, lat], e.type);
         }
     }
 
@@ -146,10 +147,9 @@
     // Define function to handle setting the marker for the user's city name input
     const setCityMarker = function (e) {
         const city = $("#find-place").val();
-        console.log(city);
 
         // Decode/Convert the city name text into latitude, longitude coordinates
-        geocode(city, e.type);
+        getGeoLocation(city, e.type);
     }
 
     // Declare marker object for the MapBox
