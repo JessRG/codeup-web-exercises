@@ -53,7 +53,7 @@ const totalUsersExp = users.reduce(reducer, 0);
 
 // Use .reduce to get the longest email from the list of users.
 reducer = (max, user) => user.email.length > max.length ? user.email : max;
-const longestEmail = users.reduce(reducer, '');
+const longestEmail = users.reduce(reducer, "");
 // console.log(longestEmail);
 
 // Use .reduce to get the list of user's names in a single string.
@@ -73,14 +73,14 @@ const nameConcatenated = users.reduce(reducer, []);
 // };
 // const uniqueLangList = users.reduce(reducer, []);
 // console.log(new Set(uniqueLangList));
-reducer = (a, user) => {
-    const copy = user.languages.splice();
-    user.languages.forEach((language) => {
-        if(!a.includes(language) && a.length > 0) {
-            a.push(language);
+
+reducer = (arr, user) => {
+    for(let language of user.languages) {
+        if(!arr.includes(language)) {
+            arr.push(language);
         }
-    });
-    return a;
+    }
+    return arr;
 };
 const uniqueLangList = users.reduce(reducer, []);
 console.log(uniqueLangList);

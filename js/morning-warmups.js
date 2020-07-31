@@ -373,6 +373,5 @@ var hamsters = [
 ];
 
 const reducer = (tallestHamHam, hamster) => Math.max(tallestHamHam, hamster.heightInMM);
-
 const highestHeight = hamsters.reduce(reducer, hamsters[0].heightInMM);
 console.log(highestHeight);
