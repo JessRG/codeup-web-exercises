@@ -63,7 +63,7 @@ reducer = (a, user) => {
     return a;
 };
 const nameConcatenated = users.reduce(reducer, []);
-// console.log(nameConcatenated.join(", "));
+console.log(`Example: Your instructors are: ${nameConcatenated.join(", ")}.`);
 
 // BONUS
 // Use .reduce to get the unique list of languages from the list of users.
