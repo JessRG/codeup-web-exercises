@@ -75,7 +75,11 @@ const nameConcatenated = users.reduce(reducer, []);
 // console.log(new Set(uniqueLangList));
 reducer = (a, user) => {
     const copy = user.languages.splice();
-    a = copy.filter((language) => {});
+    user.languages.forEach((language) => {
+        if(!a.includes(language) && a.length > 0) {
+            a.push(language);
+        }
+    });
     return a;
 };
 const uniqueLangList = users.reduce(reducer, []);
