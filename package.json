@@ -1,0 +1,33 @@
+{
+  "name": "codeup-web-exercises",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "webpack"
+  },
+  "dependencies": {
+    "babel-core": "^6.25.0",
+    "babel-loader": "^7.1.1",
+    "babel-preset-env": "^1.5.2",
+    "concurrently": "^3.5.0",
+    "jquery": "^3.5.1",
+    "json-server": "^0.16.1",
+    "promise-polyfill": "^6.0.2",
+    "webpack": "4.29.6",
+    "webpack-cli": "3.3.0",
+    "webpack-dev-server": "3.2.1",
+    "whatwg-fetch": "^3.0.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JessRG/codeup-web-exercises.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/JessRG/codeup-web-exercises/issues"
+  },
+  "homepage": "https://github.com/JessRG/codeup-web-exercises#readme"
+}
