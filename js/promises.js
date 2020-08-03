@@ -6,8 +6,15 @@ const githubAPI = (username) => {
 };
 
 githubAPI("JessRG").then((users) => {
-    console.log(new Date(users[0].created_at).toDateString());
-});
+    let date = "";
+    for(let data of users) {
+        if (data.type === "PushEvent") {
+            date = new Date(data.created_at).toDateString();
+            break;
+        }
+    }
+    return date;
+}).then(date => document.getElementById("theDate").innerText = date);
 
 const wait = (num) => {
     return new Promise((resolve, reject) => {
@@ -23,7 +30,3 @@ const wait = (num) => {
 
 wait(1000).then((time) => console.log(`You'll see this after ${time} ${ time > 1 ? "seconds" : "second" }`));
 wait(3000).then((time) => console.log(`You'll see this after ${time} ${ time > 1 ? "seconds" : "second" }`));
-wait('whatup').then((time) => {
-    if (typeof time === "number")
-        console.log(`You'll see this after ${time} ${ time > 1 ? "seconds" : "second" }`);
-}).catch(message => console.log(message));
